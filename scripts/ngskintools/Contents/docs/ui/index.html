@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>User Interface - ngSkinTools user guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../styles.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "User Interface";
+    var mkdocs_page_input_path = "ui.md";
+    var mkdocs_page_url = "/ui/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> ngSkinTools user guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Welcome</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../quickstart/index.html">Quick Start</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../videos/index.html">Videos</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../layers/index.html">Layers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../mirroring/index.html">Mirroring</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">User Interface</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#user-interface">User Interface</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#overview">Overview</a></li>
+        
+            <li><a class="toctree-l3" href="#layers-list">Layers list</a></li>
+        
+            <li><a class="toctree-l3" href="#influences-list">Influences list</a></li>
+        
+            <li><a class="toctree-l3" href="#influences-filter">Influences filter</a></li>
+        
+            <li><a class="toctree-l3" href="#paint-tab">Paint tab</a></li>
+        
+            <li><a class="toctree-l3" href="#mirror-tab">Mirror tab</a></li>
+        
+            <li><a class="toctree-l3" href="#relax-tab">Relax tab</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../faq/index.html">FAQ</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../api/index.html">API</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ngSkinTools user guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>User Interface</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="user-interface">User Interface<a class="headerlink" href="#user-interface" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This is how the main window of ngSkinTools is laid out:</p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/overview.png" /></p>
+<ol>
+<li><strong>Layers list</strong>: this is where you select active layer, and can also add/remove/arrange them;</li>
+<li><strong>Influences list</strong>: select target influence to paint weights for, or a group of influences for some other operation;</li>
+<li><strong>Influences filter</strong>: options for filtering influences list;</li>
+<li><strong>Tools tabs</strong>: various tools for skin weights editing.</li>
+</ol>
+<h2 id="layers-list">Layers list<a class="headerlink" href="#layers-list" title="Permanent link">&para;</a></h2>
+<p>The selected layer in this list is the <em>active layer</em>. When you paint, mirror, or perform any other weight setting operation, it targets currently selected layer. Some operations (like mirror) support multiple selected layers; use shift-select or ctrl-select to select multiple items in the list.</p>
+<p>Layers can be added, edited and removed here using the context menu.</p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/layers-menu.png" /></p>
+<ul>
+<li>
+<p><strong>New Layer...</strong> - opens up a dialog for a new layer to be created. Enter the name </p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/layer-properties.png" /></p>
+</li>
+<li>
+<p><strong>Duplicate Selected Layer(s)</strong> - makes a copy of selected layer; command supports multiple selected layers;</p>
+</li>
+<li><strong>Delete Selected Layer(s)</strong> - selected layer is removed from layers list; command supports multiple selected layers;</li>
+<li><strong>Merge Layer Down</strong> - selected layer gets merged with the layer underneath it.</li>
+<li><strong>Move Current Layer Up</strong>, <strong>Move Current Layer Down</strong>: change the order of layer list. Layer order is important because upper layers override contents of lower layers;</li>
+<li><strong>Toggle Layer On/Off</strong> - enable/disable layer. Weights that were painted in disabled layers do not get added to the skin cluster.</li>
+<li>
+<p><strong>Properties...</strong> - adjust properties of the selected layer.</p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/layer-properties2.png" /></p>
+<p>Layer opacity is one of the ways to control <a href="../layers/index.html#layer-transparency">transparency</a> in a layer; value <code>1.0</code> means that layer is 100% enabled, while <code>0.0</code> effectively turns layer off (0%)</p>
+</li>
+</ul>
+<h2 id="influences-list">Influences list<a class="headerlink" href="#influences-list" title="Permanent link">&para;</a></h2>
+<p>This list shows skin influences (joints) of currently selected mesh. Selected item in the list is an <em>active influence</em>, being a target for operations like paint, copy/paste, etc. Some operations support multiple selected influences, in that case, use ctrl-select (or shift-select) to select multiple items.</p>
+<p>The list also contains a special item to select <a href="../layers/index.html#layer-transparency">layer mask</a>, and, if skinCluster "Skinning Method" is set to "Weight Blended", there's also an item to edit dual quaternion blend weights:</p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/influences-dq.png" /></p>
+<p>To make finding influences easier, use <a href="#influences-filter">Influence Filter</a> to list only those you currently need.</p>
+<p>Use context menu for more operations: </p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/influences-menu.png" /></p>
+<ul>
+<li><strong>Copy Influence Weights</strong>: for currently selected influence, copies values across all vertices into memory to be later used for <code>Paste Weights</code> operation.</li>
+<li><strong>Cut Influence Weights</strong>: same as "Copy", but sets influences to 0.0 after;</li>
+<li><strong>Paste Weights (Add)</strong>: using weights previously stored in memory via <code>Cut/Copy Influence Weights</code> operation, merge them into the current influence;</li>
+<li><strong>Paste Weights (Replace)</strong>: active influence values are replaced with weights previously stored in memory via <code>Cut/Copy Influence Weights</code>, discarding previous weights on the influence;</li>
+<li><strong>List All Influences</strong>: when this option is selected, Influences List shows all influences (unless further filtered by <a href="#influences-filter">Influences Filter</a>);</li>
+<li><strong>List Only Active Influences</strong>: when this option is selected, only those influences will be shown that have weights painted on currently active layer. This is a convenient option when you've got your layers painted and now jumping between them tweaking weights here and there - as you switch from layer to layer, you only see influences relevant to this selected layer. Obviously, if you want to add an influence to the layer, you'll have to switch back to <code>List All Influences</code>;</li>
+<li><strong>Convert Mask to Transparency</strong>: multiplies layer weights with mask value, and discards the mask; as a result, layer will behave the same (final transparency untouched), but it will no longer be provided by mask;</li>
+<li><strong>Convert Transparency to Mask</strong>: converts all layer transparency to mask value, and upscales weights on all vertices to a sum of 1.0; this mode is useful when you started painting your layer without mask, but now want to convert to mask workflow; </li>
+<li><strong>Show/Hide Influence Filter</strong>: toggles visibility of <a href="#influences-filter">Influences Filter</a>.</li>
+</ul>
+<h2 id="influences-filter">Influences filter<a class="headerlink" href="#influences-filter" title="Permanent link">&para;</a></h2>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/influences-filter.png" /></p>
+<p>To narrow down the number of influences shown, enter a hint in <strong>Influence Filter:</strong> search box. You don't need to specify influence name precisely - try entering a fragment of what you're searching for, then refine the query when you get the results. Only influences matching the filter will be shown.</p>
+<p>Some filter examples:</p>
+<ul>
+<li><code>L_</code> will match influences "L_shoulder_joint, L_arm, jnt_l_finger1" - basically anything that contains string <code>L_</code> in it's name. It's also case-insensitive;</li>
+<li><code>L_ R_</code> will match "L_arm, R_arm" influences; when search terms are separated by space, this basically means <em>"show anything that matches <code>L_</code>, as well as anything that matches <code>R_</code>"</em>;</li>
+<li><code>L_*arm</code> will match "L_upper_arm", "L_lower_arm_twist"; use placeholder <code>*</code> when you want to specify that influence name needs to match two fragments, with "anything in between" as <code>*</code>;</li>
+<li>Combine queries as you see fit, like <code>L_*arm*twist R_*arm*twist shoulder</code> to limit the list to just arm and shoulders (query will probably differ based on your naming scheme).</li>
+</ul>
+<p><em>Show all influences / Only influences with non-zero weights</em> correspond to <em>all / active influences</em> in Influences list context menu, so it's just an alternate UI for the same feature.</p>
+<h2 id="paint-tab">Paint tab<a class="headerlink" href="#paint-tab" title="Permanent link">&para;</a></h2>
+<p>Paint tab provides configuration to paint weights tool. It does not start internal Maya's default <code>Paint Skin Weights Tool</code>, as ngSkinTools has it's own implementation.</p>
+<p>The UI will be disabled while the tool is not active; start the paint tool by clicking <em>Paint</em> button at the lower right corner (<em>Paint</em> button is replaced by <em>Flood</em> while paint tool is active);</p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/tab-paint.png" /></p>
+<p>Paint tool will always target last selected layer and influence, so select those in Layers/Influences list first.</p>
+<p>Tool settings should be familiar for Maya users already:</p>
+<ul>
+<li><strong>Brush shape</strong>: changes the shape of the brush as well as it's opacity on the edges. </li>
+<li><strong>Mode</strong>: changes brush behavior; see <a href="#paint-modes">Paint Modes</a>;</li>
+<li><strong>Intensity</strong>: Overall intensity of the brush. For the convenience, this setting is saved per brush mode, and restored as you switch between them.</li>
+<li><strong>Brush Radius</strong>: while you can use this field to set brush radius, it's much more convenient to do it interactively: as everywhere else in Maya, hold "B" button and left-drag with the mouse to grow/shrink it.</li>
+</ul>
+<p>Tab buttons:</p>
+<ul>
+<li>
+<p><strong>Paint</strong>: Start the paint tool. Switches the mesh to weights preview mode, and you can start painting the values:</p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/paint-mode.png" /></p>
+<p>You don't need to exit the tool to switch active layer or influence. Just select them in the Layers/Influences list and continue painting. </p>
+</li>
+<li>
+<p><strong>Flood</strong>: apply current paint operation to the whole selection. It's almost equivalent as if you'd spend the time to paint with current brush across the whole mesh/vertex selection.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature is mostly useful when applying some smoothiness across the whole layer. Select <em>Smooth</em> mode, set <em>intensity</em> to a lower value, and hit <code>Flood</code> few times until you're satisfied with results. </p>
+</div>
+</li>
+<li>
+<p><strong>Mirror</strong>: a shortcut to mirror operation, available in <a href="#mirror-tab">Mirror tab</a>. Edit mirroring settings there.        </p>
+</li>
+</ul>
+<h3 id="paint-modes">Paint modes:<a class="headerlink" href="#paint-modes" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Replace</strong>: sets weight for an influence to specified value; when reducing weight, remainder is distributed to other influences in the layer; if there are no other influences in the layer, layer transparency is created instead.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>use CTRL key to invert intensity value. Intensity 1.0 becomes 0.0, 0.9 becomes 0.1, etc. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>use SHIFT key to switch to Smooth mode while painting.</p>
+</div>
+</li>
+<li>
+<p><strong>Add</strong>: appends value to the current weight of an influence. Use this mode with low intensity values (e.g. 0.1) to slightly increase influence weights over the paint area.</p>
+</li>
+<li>
+<p><strong>Scale</strong>: multiplies current weight of an influence with intensity value. Use this mode to reduce influence weights over paint area when using high intensity values, like 0.9 or other values close to 1.0.</p>
+</li>
+<li>
+<p><strong>Smooth</strong>: smooth weights in a paint area. This tool affects all influences, unless layer mask is selected. Weights are averaged slightly and deformation appears smoother.</p>
+</li>
+</ol>
+<h3 id="display-settings">Display settings:<a class="headerlink" href="#display-settings" title="Permanent link">&para;</a></h3>
+<p>This section controls the appearance of the mesh while in paint mode.</p>
+<ol>
+<li><strong>Influence display</strong><ul>
+<li><em>All influences, multiple colors</em>: shows weights of all influences at once. If skeleton is colorized (when binding smooth skin, standard Maya option), then joint weights are used for the color; otherwise, a random color is chosen.</li>
+<li><em>Current influence, grayscale gradient</em>: just the currently active influence, where white color equals 1.0 and black equals zero.</li>
+</ul>
+</li>
+</ol>
+<h2 id="mirror-tab">Mirror tab<a class="headerlink" href="#mirror-tab" title="Permanent link">&para;</a></h2>
+<p>Mirroring skin weights is an important part of skinning workflow. NgSkinTools has it's own mirroring implementation, with a few differences to Maya's "Mirror Skin Weights" tool.</p>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/tab-mirror.png" /></p>
+<p>The "Mirror Weights" button will operate on selected layer (or multiple layers, if you selected more in layers list).</p>
+<h3 id="mirror-options">Mirror Options<a class="headerlink" href="#mirror-options" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Mirror direction</strong>: Choose the direction of the mirror: copy right-side contents on to the left side, or vice versa?</p>
+<ul>
+<li>
+<p><strong>Guess from stroke</strong>:
+   mirroring direction will be guessed automatically. If last paint stroke edited weights on the left side, weights will be copied to the right, and vice versa. Strokes or actions that edit both sides will be ignored; if you edit left side, and then flood weights, it will still resolve to "left-&gt;right" direction.</p>
+</li>
+<li>
+<p><strong>Left to right (+X to -X)</strong>: will mirror weights of vertices that are on the positive side of X axis on to the verts on the negative side;</p>
+</li>
+<li><strong>Right to left (-X to +X)</strong>  will mirror weights of vertices that are on the negative side of X axis on to the verts on the positive side;</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Depending on mirror axis you selected, options might be named slightly differently (<code>"top to bottom"</code>, <code>"front to back"</code>); when in doubt, refer to axis direction: <code>"+Y to -Y"</code>, etc;</p>
+</div>
+</li>
+<li>
+<p><strong>Mirror seam width</strong>: defines seam width (in scene distance units) between two sides; this allows for some automatic smoothing on vertices that are near mirror axis. Start with a small value, which basically results in sharp mirroring edge (as it is in standard Maya tools), and experiment with increasing it, which will make mirror operation have a falloff on the mirror seam.</p>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/mirror-seam-width.jpg" /></p>
+<p>On the left: mirror result with seam width = 0.0001; on the right - 2.0; increasing seam width helped smooth weights between left and right sides automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This smoothing is not the same as applying some smooth on mirror axis after mirroring. Internally what happens is that on the seam axis, a flipped version of weights is blended together with original. Take a look at the picture below:</p>
+<p><img alt="" src="../_img/mirroring/mirror-seam-explained.jpg" /></p>
+<p>On the left, asymmetric weighting between two influences. On the right, result of mirroring with a large seam width. You can see that it's not a straightforward blur, but rather a blend of original and flipped version of weights.</p>
+<p>It's not necessary to understand how this feature works internally, though. It's enough to know that you should set your seam width to roughly where you feel is the "width of symmetry axis" for your particular model is (for the model above, that would be roughly the width of belt buckle), and you'll find this feature to be pretty intuitive to use.</p>
+</div>
+</li>
+<li>
+<p><strong>Elements</strong>: though you'll normally want to mirror both mask and influence weights at the same time, there might be occasions where you'd paint asymmetric mask and would want to mirror just influence weights, or vice versa.</p>
+<ul>
+<li><strong>Mirror weights</strong>: check to mirror influences for selected layer(s);</li>
+<li><strong>Mirror mask</strong>: check to mirror mask for selected layer(s);</li>
+<li><strong>Mirror dual quaternion weights</strong>: check to mirror DQ weights for selected layer(s);</li>
+</ul>
+</li>
+</ol>
+<h3 id="vertex-mapping">Vertex Mapping<a class="headerlink" href="#vertex-mapping" title="Permanent link">&para;</a></h3>
+<p>This section controls how mesh vertices are prepared for mirroring.</p>
+<ol>
+<li><strong>Mirror Axis</strong>: normally, "left-right" axis is X, while Y is "top-bottom", and Z is "front-back".</li>
+<li><strong>Mapping mode</strong>: controls how vertices from one side are being looked up on the other side.<ul>
+<li><strong>Closest point on surface</strong>: in this algorithm, vertices are weighted based on the closest polygon on the
+   opposite side. This is the most straightforward and intuitive to use option.</li>
+<li>
+<p><strong>UV Space</strong>: in this algorithm, UV layout is used instead of vertex XYZ coordinates to lookup opposite side
+   polygon. In case UV is not hit for some specific vertex(e.g., not perfectly symmetric UV),
+   "Closest point on surface" algorithm is used instead for that vertex.</p>
+<p>The "opposite side" in UV case means that UV layout is "flipped" around X=0.5 vertical line.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="influences-mapping">Influences Mapping<a class="headerlink" href="#influences-mapping" title="Permanent link">&para;</a></h3>
+<p>This section controls how left and right side influences are mapped between each other. Depending on your skeleton, they can be linked in few possible ways:</p>
+<ul>
+<li>"Middle" joints: they are mapped to themselves. Whatever weight they have on one side, will be assigned to them on the other side of the mesh;</li>
+<li>"Left" and "right" pairs: like "left finger" and "right finger"</li>
+<li>Asymmetric joints: they don't have a corresponding joint on the other side. When mirroring, their weight on the other side will be assigned to a closest joint.</li>
+</ul>
+<p>To create these associations, there are multiple tools in ngSkinTools:</p>
+<ul>
+<li>Matching by distance: just like with vertices, joints are looked up on the other side based on their position values. If you have a perfectly symmetrical joints, that's what will get you most of the pairing;</li>
+<li>Matching by name: if your joints have a good naming convention, especially consistent left-right naming, that also can help matching joints in pairs. If you name your joints "L_thumb" and "R_thumb", you can tell ngSkinTools that joints are prefixed "L_" and "R_",  and ngSkinTools will detect this as a pair. </li>
+</ul>
+<p>Controls:</p>
+<ul>
+<li><strong>Position tolerance</strong>:  </li>
+<li><strong>Ignore: Prefixes/Suffixes</strong>: when matching by name, choose "Prefixes" if your influence names are prefixed, like "L_thumb" and "R_thumb"; choose suffixes if it's instead "thumb_lf" and "thumb_rt"</li>
+<li><strong>Influence prefixes/Influence suffices</strong>: put your influence prefixes or suffixes here. For the above example, for prefixes you'd write <code>L_, R_</code> and for suffixes <code>_lf, _rt</code></li>
+<li>
+<p><strong>Edit influences associations</strong>: view and manually edit influence associations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I'm not quite happy with the current state of manual influence associations feature and would like to redo the whole thing at some point. Please excuse me insufficient level of documentation here for now.</p>
+</div>
+</li>
+</ul>
+<h2 id="relax-tab">Relax tab<a class="headerlink" href="#relax-tab" title="Permanent link">&para;</a></h2>
+<p><img alt="" class="ui-screenshot" src="../_img/ui/tab-relax.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../faq/index.html" class="btn btn-neutral float-right" title="FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mirroring/index.html" class="btn btn-neutral" title="Mirroring"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../mirroring/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../faq/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+## Cheat sheet for all the commands available in skinningtools.py ##
+---------------------------------------------------------------------------------------------------------------------------------
+skinCluster  (object, silent=False)
+''' get skincluster from given polygonal object'''
+object: polygon mesh transform or shape (str)
+silent: if False, opens error dialogue, if true returns none when skincluster not found (bool)
+returns: skinCluster (str) or None 
+---------------------------------------------------------------------------------------------------------------------------------
+convertToVertexList  (object)
+''' convert polygon components into a flat list of vertices '''
+object: polygon mesh/shape or components ([str])
+returns:  flat list of selection converted to vertices ([str])
+---------------------------------------------------------------------------------------------------------------------------------
+getVertOverMaxInfluence  (singleObject = None, MaxInfluenceValue = 8, notSelect = False, progressBar = None)
+''' get vertices that have more then given amount of vertices ''' 
+singleObject: current polygonal object to process (str)
+MaxInfluenceValue: maximum joint influences allowed on each vertex of object (int)
+notSelect: select the vertices or return them (bool)
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: list of vertices that have more than macimum allowed vertices ([str])
+---------------------------------------------------------------------------------------------------------------------------------
+setMaxJointInfluences  (objects = None, MaxInfluenceValue = 8, progressBar = None)
+''' get vertices that have more then given amount of vertices and prune smallest influences untill maximum influences is reached''' 
+objects: multiple polygonal objects ([str])
+MaxInfluenceValue: maximum joint influences allowed on each vertex of object (int)
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+autoLabelJoints  (inputLeft, inputRight, progressBar = None)
+''' set side, type and label string for all joints in scene, splitting left from right, and center'''
+inputLeft: string value to mark which joints are on the left side wildcard (*) used to difine rest of the joint (str)
+inputRight: string value to mark which joints are on the right side wildcard (*) used to difine rest of the joint (str)
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+execCopySourceTarget  (TargetSkinCluster, SourceSkinCluster,  TargetSelection, SourceSelection, smoothValue= 1, progressBar = None, amount =1, undoState = True)
+''' copy influences between closest vertices if they have a similar skincluster (exact same joints)'''
+TargetSkinCluster: skincluster of object to copy to (str)
+SourceSkinCluster: skincluster of object to copy from (str)
+TargetSelection: component selection that will get skinning information ([str])
+SourceSelection: component selection that will store skinning information ([str])
+smoothValue: int value determines how many closest vertices to search for  (average weight is applied) (int)
+progressBar: if pointer given it will show progress (QT progressbar)
+amount: used for progress bar, when this tool is part of a for loop (gives progress better detail) (int)
+undoState: used for progress bar, set this False to make it part of a bigger undo state, set True for singe command undo (bool)
+returns: True if succesfull, False if not (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+resetToBindPose  (object)
+''' reset object to bind pose (will not work if skeleton is connected with complex hierarchy)'''
+object: skinned and posed polygonal object  (str)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+getInfluencingjoints  (object)
+''' gather all joints that have an influence on the skincluster to given object'''
+object: skinned polygonal object (str)
+returns: influencing joints ([str])
+---------------------------------------------------------------------------------------------------------------------------------
+resetSkinnedJoints  (joints)
+'''recomputes all prebind matrices in this pose, joints will stay in place while the mesh goes back to bindpose'''
+joints: list of joints that need to be recomputed ([str])
+returns: True if succesfull, False if not (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+freezeSkinnedJoints  (joints)
+''' recomputes rotation values for current skinned joint'''
+joints: list of joints that need to be recomputed ([str])
+returns: joints ([str])
+---------------------------------------------------------------------------------------------------------------------------------
+transferClosestSkinning  (objects, smoothValue, progressbar)
+''' transfer skinning information between 2 ojbects based on vertex positions'''
+objects: list of polygonal objects ([str])
+smoothValue: int value determines how many closest vertices to search for  (average weight is applied) (int)
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+removeBindPoses ()
+''' deletes all bindpose nodes in scene'''
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+addUnlockedZeroInfl  (joints, mesh)
+''' add joint as an influence to the skincluster with 0.0 weight value'''
+joints: list of joints ([str])
+mesh: skinned polygonal mesh that will recieve the joint as an influence (str)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+transferSkinning  ( baseSkin, otherSkins, inPlace=True, sAs = True)
+''' transfer skinning from one object to multiple'''
+baseSkin: skinned polygonal object (str)
+otherSkins: polygonal objects that will recieve skin information ([str])
+inPlace: if True freezes and cleans other objects before copy, if False expects skincluster on mesh with similar influences (bool)
+sAs: if True will search for Closest components (smooth copy) if False will search for closest singel vertex (bool)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+AvarageVertex  (selection,useDistance)
+''' averages skinweights information on vertices'''
+selection: list of vertices ([str])
+useDistance: applicable when length of list == 2, if True will use the edge distance to calculate smooth weights
+			 if False, will use total amount of vertices in between as a divisor (bool)
+returns: True if succesfull, False if not (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+Copy2MultVertex  (selection, secondSelection = False)
+''' copies skinweights information on vertices'''
+selection: list of vertices ([str])
+secondSelection: instead of last vertex, second vertex is used (best when loop is selected) (bool)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+neighbourAverage  (components, warningPopup=True)
+''' smooth components based on the values of their neighbours, expensive command to use on large selection of components'''
+components: componets to process ([str])
+warningPopup: if True will open a warning dialogue if too many components are used (bool)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+BoneMove  (bone1, bone2, skin)
+''' move all influences from one joint to another'''
+bone1: joint from which weights will be taken (str)
+bone2: joint onto which weights will be set (str)
+skin: skinned polygonal mesh on which operation needs to occur (str)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+BoneSwitch  (joint1, joint2, skin)
+''' switch influences between 2 bones '''
+bone1: joint from which weights will be set to bone2 (str)
+bone2: joint from which weights will be set to bone1 (str)
+skin: skinned polygonal mesh on which operation needs to occur (str)
+returns:  True if succesfull, False if not (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+ShowInfluencedVerts  (skin, bones, progressBar = None)
+''' gather all vertices that are influenced by current joint selection (influences above 0.0000) '''
+skin: skinned polygonal object (str)
+bones: list of joints ([str])
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: list of vertices ([str]) 
+---------------------------------------------------------------------------------------------------------------------------------
+switchVertexWeight  (vertex1, vertex2)
+''' switches skin weight information between 2 vertices '''
+vertex1: vertex from which weights will be set to vertex2 (str)
+vertex2: vertex from which weights will be set to vertex1 (str)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+removeJoints( skinObjects, jointsToRemove, useParent = True, delete =True, fast = False , progressBar = None)
+''' removes joints from current skinned meshes, if not fast: will try to find ways to match weights best it can'''
+skinObjects: list of skinned polygonal objects ([str])
+jointsToRemove: list of joints  ([str])
+useParent: if True will move influences from joint (jointsToRemove) to its parent (bool)
+delete: if True will delete the joint (jointsToRemove) when operation is done (bool)
+fast: if True, will delete bones without rearranging weights (bool)
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+comparejointInfluences(  skinObjects , query = False)
+'''makes sure that given skinobjects have the same joints influencing, its a safety measure when copying weights between different objects'''
+skinObjects: list of skinned polygonal objects
+query: if True, will return True if influence lists are identical (bool), if False unifies influences ( None )
+returns: True if succesfull (bool), override by query flag (bool or None)
+---------------------------------------------------------------------------------------------------------------------------------
+hammerVerts( input, needsReturn = True)
+''' force smooth operation on all input components '''
+input: skinned polygonal components ([str])
+needsReturn: slower computation that will also return vertices affected ([str])
+returns: True if succesfull (bool), override by flag needsReturn ([str])
+---------------------------------------------------------------------------------------------------------------------------------
+smoothAndSmoothNeighbours  (input, growing = False )
+''' smooth operation on selection and selections neightbours'''
+input: list of skinned polygonal components ([str])
+growing: expands selection returning neighbours of current component input (bool)
+returns: list of vertices ([str])
+---------------------------------------------------------------------------------------------------------------------------------
+smoothNeighbours  (input)
+''' smooth operation on selections neightbours'''
+input: list of skinned polygonal components ([str])
+returns: list of vertices ([str]) 
+---------------------------------------------------------------------------------------------------------------------------------
+removeUnusedInfluences( objects, progressBar = None)
+''' remove bones from skincluster that have no influnece on it'''
+objects: skinned polygonal objects ([str])
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+transferUvToSkinnedObject( mesh_source, mesh_target)
+''' transfer uv's from source to target '''
+mesh_source: polygonal object with UVs (str)
+mesh_target: skinned polygonal object (str)
+returns: mesh_target (str)
+---------------------------------------------------------------------------------------------------------------------------------
+freezeSkinnedMesh( meshes, progressBar = None)
+''' freeze transformations and remove construction history on skinned mesh'''
+meshes: skinned polygonal ojbects ([str])
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: meshes ([str])
+---------------------------------------------------------------------------------------------------------------------------------
+seperateSkinnedObject  (meshes, progressBar = None)
+''' seperates polygonal objects by shells retaining skinning info'''
+meshes: skinned polygonal meshes ([str])
+progressBar:  if pointer given it will show progress (QT progressbar)
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+extractSkinnedShells  (components)
+''' duplicate component selection as a new mesh with same skinning info'''
+components: skinned polygonal components ([str])
+returns: skinned polygonal object (str)
+---------------------------------------------------------------------------------------------------------------------------------
+combineSkinnedMeshes  (meshes)
+''' combine multiple meshes into a single skinned mesh'''
+meshes: skinned polygonal objects ([str])
+returns: skinned polygonal object (str)
+---------------------------------------------------------------------------------------------------------------------------------
+keepOnlySelectedInfluences  (fullSelection, jointOnlySelection)
+'''removes influences on selected component that are not selected in the jointsselection given '''
+fullSelection: skinned polygonal components ([str]) or skinned polygonal object (str)
+jointOnlySelection: list of joints influencing current skincluster ([str])
+returns: True if succesfull (bool)
+---------------------------------------------------------------------------------------------------------------------------------
+hardSkinSelectionShells  (selection, progressbar = False)
+''' converts selection to shells, gathers weights from each shell and averages it out and give each vertex of the shell the new weights '''
+selection: skinned polygonal components ([str])
+progressBar: if pointer given it will show progress (QT progressbar)
+returns: list of vertices ([str]) 
+---------------------------------------------------------------------------------------------------------------------------------
+getMeshesInfluencedByJoint  (currentJoints)
+''' get meshes influenced by current joint selection '''
+currentJoints: list of joints ([str])
+returns: list of skinned polygonal objects ([str])

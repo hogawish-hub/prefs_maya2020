@@ -1,0 +1,7 @@
+import maya.cmds as cmds
+
+geos = cmds.ls(sl=True,dag=True,type='mesh')
+
+for geo in geos:
+    print('{}.aiSubdivIterations'.format(geo))
+    cmds.setAttr('{}.aiSubdivIterations'.format(geo),1)

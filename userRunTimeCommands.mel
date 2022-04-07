@@ -1,0 +1,251 @@
+//Maya Preference 2020 (Release 1)
+//
+//
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("setAttr \"CAM_Working.rotateZ\" 0;\nsetAttr \"CAM_Working.translateX\" 0;\nsetAttr \"CAM_Working.translateY\" 0;\nsetAttr \"CAM_Working.translateZ\" 0;\nsetAttr \"CAM_Working.rotateX\" 0;\nsetAttr \"CAM_Working.rotateY\" 0;")
+	CAM_Working_Reset;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\nstring $ActivePanel=`getPanel -wf`; \n\nsetXrayOption true $ActivePanel;\n\n}")
+	Xray;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{string $ActivePanel=`getPanel -wf`; \n\nsetXrayOption false $ActivePanel;\n}")
+	DeXray;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\nstring $ActivePanel=`getPanel -wf`;\nmodelEditor -e -nurbsCurves false $ActivePanel;\n}")
+	NurbsOFF;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\nstring $ActivePanel=`getPanel -wf`;\nmodelEditor -e -nurbsCurves true $ActivePanel;\n}")
+	NurbsON;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\nstring $ActivePanel=`getPanel -wf`;\nmodelEditor -e -imagePlane false $ActivePanel;\n}")
+	ImagePlaneOFF;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\nstring $ActivePanel=`getPanel -wf`;\nmodelEditor -e -imagePlane true $ActivePanel;\n}")
+	imagePlaneON;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\n\tint $Mod=$HogaCount%2;\n\tstring $ActivePanel=`getPanel -wf`; \n\n\n\tif($Mod){\n\t\n\t\tsetXrayOption true $ActivePanel;\n\t}\n\n\telse{\n\t\tsetXrayOption false $ActivePanel;\n\t\t\n\t}\n\n\t$HogaCount++;\n}")
+	Xray_ON_OFF;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation ""
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\n\tint $Mod=$HogaCount%2;\n\tstring $ActivePanel=`getPanel -wf`; \n\n\n\tif($Mod){\n\t\n\t\tmodelEditor -e -nurbsCurves true $ActivePanel;\n\t}\n\n\telse{\n\t\tmodelEditor -e -nurbsCurves false $ActivePanel;\n\t\t\n\t}\n\n\t$HogaCount++;\n}")
+	Nurbs_ON_OFF;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\n\tint $Mod=$HogaCount%2;\n\tstring $ActivePanel=`getPanel -wf`; \n\n\n\tif($Mod){\n\t\n\t\tmodelEditor -e -imagePlane true $ActivePanel;\n\t}\n\n\telse{\n\t\tmodelEditor -e -imagePlane false $ActivePanel;\n\t\t\n\t}\n\n\t$HogaCount++;\n}")
+	ImagePlane_ON_OFF;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("timeSliderClearKey;")
+	TimeSliderKeyDelete;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("timeSliderCopyKey;")
+	TimeSliderCopyKey;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("timeSliderPasteKey false;")
+	TimeSliderPasteKey;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("performPlayblast 4;")
+	PlayblustOption;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("performPlayblast 3;")
+	Playblust;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("    {\n        string $CAM[]=`camera`;\n        group -n\"GRP_CAM_Working\" $CAM;\n        rename $CAM[0] \"CAM_Working\";\n    }")
+	Create_CAM_Working;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\n\tint $Mod=$HogaCount%2;\n\tstring $ActivePanel=`getPanel -wf`; \n\n\n\tif($Mod){\n\t\n\t\tmodelEditor -e -motionTrails true $ActivePanel;\n\t}\n\n\telse{\n\t\tmodelEditor -e -motionTrails false $ActivePanel;\n\t\t\n\t}\n\n\t$HogaCount++;\n}")
+	MotionTrail_ON_OFF;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "Animation"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("{\n    \n    proc hogaGraphEditorFilter(string $Attr){\n        //get selected objects list\n        string $Objects[]=`ls -sl`;\n\n\n        select -cl;\n        for($Object in $Objects){\n\n\n        \n                string $SourceConnection=`connectionInfo -sfd ($Object+\".\"+$Attr)`;\n                string $SourceNode=`substitute \".output\" $SourceConnection \"\"`;\n\n\n                string $Type=`objectType $SourceNode`;\n                if(gmatch($Type,\"animCurveT*\")){\n                    select -add $SourceNode;\n                    \n            \n            }\n            \n            \n        }\n\n\n    }\n\n\n    proc backObjectsSelection(string $Attr){   \n        string $Objects[]=`ls -sl`;\n        select -cl;\n        for($Object in $Objects){\n            string $ObjType=`objectType $Object`;\n            if(gmatch($ObjType,\"animCurveT*\")){\n\n\n                string $DestConnection[]=`connectionInfo -dfs ($Object+\".output\")`;\n                string $DestNode=`substitute (\".\"+$Attr) $DestConnection[0] \"\"`;\n                select -add $DestNode;\n\n\n            }\n\n\n            \n            \n        }\n    }\n        \n    global proc string getText()\n    {\n        string $pri = `textField -q -text text1`;\n        string $Attr;\n        switch($pri){\n\n\n            case \"tx\":\n                $Attr=\"translateX\";\n                break;\n        \n            case \"ty\":\n                $Attr=\"translateY\";\n                break;\n        \n            case \"tz\":\n                $Attr=\"translateZ\";\n                break;\n        \n        \n            case \"rx\":\n                $Attr=\"rotateX\";\n                break;\n            \n            case \"ry\":\n                $Attr=\"rotateY\";\n                break;\n            \n            case \"rz\":\n                $Attr=\"rotateZ\";\n                break;\n            \n            case \"sx\":\n                $Attr=\"scaleX\";\n                break;\n            \n            case \"sy\":\n                $Attr=\"scaleY\";\n                break;\n            \n            case \"sz\":\n                $Attr=\"scaleZ\";\n                break;\n            \n            default:\n                $Attr=$pri;\n                break;\n\n\n\n\n        }\n\n\n        return $Attr;\n    }\n\n\n    proc hogaGraphEditorFilterMain(){\n        if((`window -ex hogaGraphFilter`)==true) deleteUI hogaGraphFilter;\n        window -title\"Filter Attribute\" -mnb false -mxb false hogaGraphFilter;\n\n\n        \n        columnLayout;\n        textField  -aie true -ec \"$Attr=getText();hogaGraphEditorFilter($Attr);\" text1 ;\n        button -l \"ObjectSelection\" -command \"$Attr=getText();backObjectsSelection($Attr);\";\n        button -l \"Reload\" -command \"hogaGraphEditorFilterMain();\";\n        setParent ..;\n        showWindow; \n    }\n}hogaGraphEditorFilterMain();")
+	GraphFilter;
+
+runTimeCommand
+	-label ""
+	-image ""
+	-tags ""
+	-keywords ""
+	-plugin ""
+	-annotation "test"
+	-category "Custom Scripts"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import HogaMathInMaya as hmm\nimport random\nimport maya.api.OpenMaya as om\n\npanel = cmds.getPanel(withFocus=True)\ncam = cmds.modelPanel(panel, q=True, camera=True)\n\nprint cam")
+	test;
+

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Mirroring - ngSkinTools user guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../styles.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Mirroring";
+    var mkdocs_page_input_path = "mirroring.md";
+    var mkdocs_page_url = "/mirroring/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> ngSkinTools user guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Welcome</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../quickstart/index.html">Quick Start</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../videos/index.html">Videos</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../layers/index.html">Layers</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">Mirroring</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#mirroring-in-previous-versions-of-ngskintools-141-and-earlier">Mirroring in previous versions of ngSkinTools (1.4.1 and earlier)</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#initialization">Initialization</a></li>
+        
+            <li><a class="toctree-l3" href="#initialization-options">Initialization Options</a></li>
+        
+            <li><a class="toctree-l3" href="#mirroring">Mirroring</a></li>
+        
+            <li><a class="toctree-l3" href="#mirror-options">Mirror Options</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ui/index.html">User Interface</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../faq/index.html">FAQ</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../api/index.html">API</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ngSkinTools user guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Mirroring</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mirroring-in-previous-versions-of-ngskintools-141-and-earlier">Mirroring in previous versions of ngSkinTools (1.4.1 and earlier)<a class="headerlink" href="#mirroring-in-previous-versions-of-ngskintools-141-and-earlier" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Previous versions of ngSkinTools required slightly complicated workflow for mirroring. This section is not needed for newer versions of the plugin; for UI details, see <a href="../ui/index.html#mirror-tab">Mirror Tab</a>.</p>
+</div>
+<h2 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h2>
+<p>To be able to mirror weights with ngSkinTools, first an initialization of influence and vertex associations is necessary. In this step, plugin figures out how vertices and influences map onto the opposite side of the rig, and caches that information for later use.</p>
+<p>To perform initialization:</p>
+<ul>
+<li>Go to "Init Skin Transfer" dialog;</li>
+</ul>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/mirror-initialize-button.jpg" /></p>
+<ul>
+<li>Put the character in default (bind) pose; precision is important because mesh associations (left to right and right to left) will be decided based on current pose; influence associations also will be using current joint positions as well;</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Newer versions of the plugin (after 1.5) do not require bind pose anymore. </p>
+</div>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/t-pose.jpg" /></p>
+<ul>
+<li>Edit influence association options (explained below);</li>
+<li>Click "Initialize"; plugin will read mesh and influences positions, and create an internal set of rules of how one side of your rig maps onto the other side;</li>
+</ul>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/init-mirror-2.jpg" /></p>
+<ul>
+<li>Review how influences map onto each other; if you think that some influences are not finding it's pair, or should not be paired with any other influence, add manual association overrides.</li>
+</ul>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/infl-associations.jpg" /></p>
+<ul>
+<li>When you're happy with influence association map, you can close initialization window and start using mirror tool.</li>
+</ul>
+<p>Initialization has to be repeated each time you add or remove influences to a skin cluster; plugin will warn you when cached data becomes outdated.</p>
+<h2 id="initialization-options">Initialization Options<a class="headerlink" href="#initialization-options" title="Permanent link">&para;</a></h2>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/init-mirror.jpg" /></p>
+<ol>
+<li>
+<p><strong>Influence distance error</strong>: when matching influences by position, this defines the overall tolerated inaccuracy. Try keeping this value low, as increasing it might allow influences being associated with wrong pair. In general, influences should be matched with closest available influence on the other side.</p>
+</li>
+<li>
+<p><strong>Influence prefixes</strong>: when matching influences by name, these are prefixes that will be ignored. For example, if your naming convention for left and right influences is <code>L_wrist</code>, <code>R_wrist</code>, set prefixes to <code>L_,R_</code>;</p>
+</li>
+<li>
+<p><strong>Mirror Axis</strong>: normally, "left-right" axis is X, while Y is "top-bottom", and Z is "front-back". Note that you don't have to define mirroring direction  ("left to right or right to left?") in this step yet.</p>
+</li>
+<li>
+<p><strong>Current Status</strong>: displays current state of mirror cache status.</p>
+</li>
+<li>
+<p><strong>Influence Associations</strong>: a list of how influences map from one side to another. Entries might look like this:</p>
+<ul>
+<li><code>L_joint1 &lt;-&gt; R_joint1</code>: bi-directional association: weights of L_joint1 on one side will become weights of R_joint1 on another side, and vice versa;</li>
+<li><code>L_joint2 -&gt; R_joint1</code>: weights of L_joint2 on one side will become weights of R_joint1 on another side, but that's not the case the other way around. This mostly happens when one side has more joints than another side, then you end up with a rule list <code>L_joint1 &lt;-&gt; R_joint1</code>, <code>L_joint2 -&gt; R_joint1</code>;</li>
+<li><code>hipJoint: itself</code>: joint does not map to another joint, and when mirroring, weights on this joint become symmetrical on both sides. That's usually joints that don't have their mirror counterpart and are on the mirror plane themselves, e.g. spine or neck.</li>
+</ul>
+</li>
+</ol>
+<h3 id="influence-associations-popup-menu">"Influence Associations" popup menu<a class="headerlink" href="#influence-associations-popup-menu" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Add manual association</strong>: define influence association manually; in the dialog that opens, select source influence, destination influence, specify if you want bidirectional, one-sided or self-reference association, and click add. Manual associations are displayed with an "<code>[M]</code>" prefix.</p>
+</li>
+<li>
+<p><strong>Remove manual association</strong>: removes selected manual association; influences again become subject to automatic association rules. </p>
+</li>
+</ul>
+<p>.. note:: for convenience, manual influence association rules are saved in scene file and will be remembered next time rig is opened.</p>
+<h2 id="mirroring">Mirroring<a class="headerlink" href="#mirroring" title="Permanent link">&para;</a></h2>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/mirror-weights.jpg" /></p>
+<p>When mirroring info is initialized, weights are ready to be mirrored. This can be done in any pose of the rig, thanks to pre-cached mirroring associations. To mirror weights:</p>
+<ul>
+<li>In layer list, select the layer to be mirrored (most often that will just be the current layer you're painting weights on at that moment);</li>
+<li>Decide which direction are you mirroring to, and select the appropriate option;</li>
+<li>Click mirror!</li>
+</ul>
+<h2 id="mirror-options">Mirror Options<a class="headerlink" href="#mirror-options" title="Permanent link">&para;</a></h2>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/mirror-options.jpg" /></p>
+<ol>
+<li>
+<p><strong>Mirror Direction</strong>: specifies if weights should be copied from left side to the right, or the other way around (same goes for top to bottom or front to back, should you choose another mirroring axis); </p>
+<ul>
+<li>
+<p><code>Guess from stroke</code> - mirroring direction will be guessed automatically. If last paint stroke edited weights on the left side, weights will be copied to the right, and vice versa. Strokes or actions that edit both sides will be ignored; if you edit left side, and then flood weights, it will still resolve to "left-&gt;right" direction.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For this feature to work, mirroring info should be initialized before the stroke, otherwise the tool is not aware which side is which!</p>
+</div>
+</li>
+<li>
+<p><code>Positive to negative side</code> or <code>Negative to positive side</code>: define mirroring direction manually. </p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Mirror Seam Width</strong>: defines seam width (in scene distance units) between two sides; this allows for some automatic smoothing on vertices that are near mirror axis.</p>
+<p><img alt="" class="ui-screenshot" src="../_img/mirroring/mirror-seam-width.jpg" /> </p>
+<p>On the left: mirror result with seam width = 0.0001; on the right - 2.0; increasing seam width helped smooth weights between left and right sides automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This smoothing is not the same as applying some smooth on mirror axis after mirroring. Internally what happens is that on the seam axis, a flipped version of weights is blended together with original. Take a look at the picture below:</p>
+<p><img alt="" src="../_img/mirroring/mirror-seam-explained.jpg" /></p>
+<p>On the left, asymmetric weighting between two influences. On the right, result of mirroring with a large seam width. You can see that it's not a straightforward blur, but rather a blend of original and flipped version of weights.</p>
+<p>It's not necessary to understand how this feature works internally, though. It's enough to know that you should set your seam width to roughly where you feel is the "width of symmetry axis" for your particular model is (for the model above, that would be roughly the width of belt buckle), and you'll find this feature to be pretty intuitive to use.</p>
+</div>
+</li>
+<li>
+<p><strong>Elements</strong>: though you'll normally want to mirror both mask and influence weights at the same time, there might be occasions where you'd paint asymmetric mask and would want to mirror just influence weights, or vice versa.</p>
+</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ui/index.html" class="btn btn-neutral float-right" title="User Interface">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../layers/index.html" class="btn btn-neutral" title="Layers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../layers/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ui/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

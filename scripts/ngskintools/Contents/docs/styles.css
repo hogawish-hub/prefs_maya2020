@@ -1,0 +1,34 @@
+.section img.ui-screenshot {
+	border: 1px solid #E1E4E5;
+	padding: 10px;
+	background-color: #F3F3F3;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.section img.logo {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	max-width: 80px;
+	max-height: 79px;
+}
+
+li.toctree-l3:first-child {
+	display: none;
+}
+
+.clearfix {
+	clear:both;
+}
+
+
+.section code {
+	font-size: .9em;
+}
+
+.vimeo-iframe {
+	margin: 0px 0px 40px 0px;
+	border: 1px solid silver;
+}

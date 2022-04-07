@@ -1,0 +1,978 @@
+global proc shelf_ngSkinTools () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 0
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "ngSkinTools UI" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "ngst" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "ngSkinToolsShelfIcon.png" 
+        -image1 "ngSkinToolsShelfIcon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from ngSkinTools.ui.mainwindow import MainWindow\nMainWindow.open()" 
+        -sourceType "python" 
+        -commandRepeatable 0
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Paint weights on smooth bound skins" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Paint Skin Weights" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "paintSkinWeights.png" 
+        -image1 "paintSkinWeights.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ArtPaintSkinWeightsTool" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Detach skin" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Unbind Skin" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "detachSkin.png" 
+        -image1 "detachSkin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DetachSkin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add influence options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "addInfluenceDialog" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "addWrapInfluence.png" 
+        -image1 "addWrapInfluence.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "AddInfluenceOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Mirror skin weights options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "mirrorSkinWeightsDialog" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "mirrorSkinWeight.png" 
+        -image1 "mirrorSkinWeight.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "MirrorSkinWeightsOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select a joint to mirror" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Mirror Joints" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "kinMirrorJoint_S.png" 
+        -image1 "kinMirrorJoint_S.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "mirrorJoint -mirrorYZ -searchReplace \"_L\" \"_R\"" 
+        -sourceType "mel" 
+        -doubleClickCommand "MirrorJointOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Edit various component values for the selected object(s)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Component Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CpEd" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ComponentEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "delete all namespaces" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\ncmds.namespace(setNamespace=':')\n\nfor ..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "del NS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\ncmds.namespace(setNamespace=':')\n\nfor ns in reversed(cmds.namespaceInfo(listOnlyNamespaces=True, recurse=True)):\n    if ns != 'UI' and ns != 'shared':\n        cmds.namespace(moveNamespace=(ns, ':'), force=True)\n        cmds.namespace(removeNamespace=ns)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Customize the joint scale" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Joint Size..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "JS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconDisplay.png" 
+        -image1 "menuIconDisplay.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "JdsWin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Build from Selection" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Build from Selection" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "BfS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import pymel\npymel.internal.factories.callback" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Import Guide Template" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Import Guide Template" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "IGT" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pymel.internal.factories.callback" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Import Skin" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Import Skin" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "IS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pymel.internal.factories.callback" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Export Guide Template" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Export Guide Template" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "EGT" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pymel.internal.factories.callback" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add Support Joint" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Support Joint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "ASJ" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pymel.internal.factories.callback" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add Blended Joint" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Add Blended Joint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "ABJ" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pymel.internal.factories.callback" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Copies the skin weights of the selected source skin to the selected destination skin" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Copy Skin Weights" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "copySkinWeight.png" 
+        -image1 "copySkinWeight.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CopySkinWeights" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import HogaRigOperation as hro\n\nreload(hro)\nhro.playblastForSkinWeight()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import HogaRigOperation as hro\n\nreload(hro)\nhro.playblastForSkin..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "skinBlast" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import HogaRigOperation as hro\n\nreload(hro)\nhro.playblastForSkinWeight()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import HogaRigOperation as hro\n\nreload(hro)\nhro.exportGimmickJntsData()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import HogaRigOperation as hro\n\nreload(hro)\nhro.exportGimmickJnt..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "expGimJnt" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import HogaRigOperation as hro\n\nreload(hro)\nhro.exportGimmickJntsData()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Studio Library" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "D:\\hogari\\modules\\studiolibrary-2.7.1\\src\\studiolibrary\\resource\\icons\\icon.png" 
+        -image1 "D:\\hogari\\modules\\studiolibrary-2.7.1\\src\\studiolibrary\\resource\\icons\\icon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n# -----------------------------------\n# Studio Library\n# www.studiolibrary.com\n# -----------------------------------\n\nimport os\nimport sys\n    \nif not os.path.exists(r'D:\\hogari\\modules\\studiolibrary-2.7.1\\src'):\n    raise IOError(r'The source path \"D:\\hogari\\modules\\studiolibrary-2.7.1\\src\" does not exist!')\n    \nif r'D:\\hogari\\modules\\studiolibrary-2.7.1\\src' not in sys.path:\n    sys.path.insert(0, r'D:\\hogari\\modules\\studiolibrary-2.7.1\\src')\n    \nimport studiolibrary\nstudiolibrary.main()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\nselected = cmds.ls(sl=1)\n\nfor ctl in selected:\n    shapes = cmds.listRelatives(ctl,s=1)\n    cmds.select(shapes)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\nselected = cmds.ls(sl=1)\n\nfor ctl in s..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nselected = cmds.ls(sl=1)\n\nfor ctl in selected:\n    shapes = cmds.listRelatives(ctl,s=1,pa=1)\n    cmds.select(shapes)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "from errorCheckingTool import ErrorCheckingTool\nErrorCheckingTool.StartUI()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "from errorCheckingTool import ErrorCheckingTool\nErrorCheckingToo..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "check1" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from errorCheckingTool import ErrorCheckingTool\nErrorCheckingTool.StartUI()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "modelChecker" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "\"\"\"modelChecker v.0.1.0\n    Reliable production ready sanity che..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "check2" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\"\"\"modelChecker v.0.1.0\n    Reliable production ready sanity checker for Autodesk Maya\n    Sanity check polygon models in Autodesk Maya, and prepare\n    your digital assets for a smooth sailing through the production pipeline.\n    Contact: jakobjk@gmail.com\n    https://github.com/JakobJK/modelChecker\n\"\"\"\n\nfrom PySide2 import QtCore, QtWidgets\nfrom shiboken2 import wrapInstance\nfrom functools import partial\n\nimport sys\nimport maya.cmds as cmds\nimport maya.OpenMayaUI as omui\nimport maya.api.OpenMaya as om\n\n# the fix functions needs to go here eventually\n# Example:\n# def shapeNames_fix():\n# Naming checks\n\ndef trailingNumbers(self, list):\n    numbers = ['0','1','2','3','4','5','6','7','8','9']\n    trailingNumbers = []\n    for obj in list:\n        if obj[len(obj)-1] in numbers:\n            trailingNumbers.append(obj)\n    return trailingNumbers\n\ndef duplicatedNames(self, list):\n    duplicatedNames = []\n    for item in list:\n    \tif '|' in item:\n            duplicatedNames.append(item)\n    return duplicatedNames\n\ndef namespaces(self, list):\n    namespaces = []\n    for obj in list:\n        if ':' in obj:\n            namespaces.append(obj)\n    return namespaces\n\ndef shapeNames(self, list):\n    shapeNames = []\n    for obj in list:\n        new = obj.split('|')\n        shape = cmds.listRelatives(obj, shapes = True)\n        if shape is not None:\n            name = new[-1] + \"Shape\"\n            if not shape[0] == name:\n                shapeNames.append(obj)\n    return shapeNames\n\n# Topology checks\n\n\ndef triangles(self, list):\n    triangles = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n    \tfaceIt = om.MItMeshPolygon(selIt.getDagPath())\n    \tobjectName = selIt.getDagPath().getPath()\n    \twhile not faceIt.isDone():\n    \t    numOfEdges = faceIt.getEdges()\n    \t    if len(numOfEdges) == 3:\n    \t        faceIndex = faceIt.index()\n    \t        componentName = str(objectName) + '.f[' + str(faceIndex) + ']'\n    \t        triangles.append(componentName)\n    \t    else:\n    \t        pass\n    \t    faceIt.next(None)\n    \tselIt.next()\n    return triangles\n\n\ndef ngons(self, list):\n    ngons = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n    \tfaceIt = om.MItMeshPolygon(selIt.getDagPath())\n    \tobjectName = selIt.getDagPath().getPath()\n    \twhile not faceIt.isDone():\n    \t    numOfEdges = faceIt.getEdges()\n    \t    if len(numOfEdges) > 4:\n    \t        faceIndex = faceIt.index()\n    \t        componentName = str(objectName) + '.f[' + str(faceIndex) + ']'\n    \t        ngons.append(componentName)\n    \t    else:\n    \t        pass\n    \t    faceIt.next(None)\n    \tselIt.next()\n    return ngons\n\ndef hardEdges(self, list):\n    hardEdges = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n        edgeIt = om.MItMeshEdge(selIt.getDagPath())\n        objectName = selIt.getDagPath().getPath()\n        while not edgeIt.isDone():\n            if edgeIt.isSmooth == False and edgeIt.onBoundary() == False:\n                edgeIndex = edgeIt.index()\n                componentName = str(objectName) + '.e[' + str(edgeIndex) + ']'\n                hardEdges.append(componentName)\n            else:\n                pass\n            edgeIt.next()\n        selIt.next()\n    return hardEdges\n\ndef lamina(self, list):\n    selIt = om.MItSelectionList(self.SLMesh)\n    lamina = []\n    while not selIt.isDone():\n    \tfaceIt = om.MItMeshPolygon(selIt.getDagPath())\n    \tobjectName = selIt.getDagPath().getPath()\n    \twhile not faceIt.isDone():\n    \t    laminaFaces = faceIt.isLamina()\n    \t    if laminaFaces == True:\n    \t        faceIndex = faceIt.index()\n    \t        componentName = str(objectName) + '.f[' + str(faceIndex) + ']'\n    \t        lamina.append(componentName)\n    \t    else:\n    \t        pass\n    \t    faceIt.next(None)\n    \tselIt.next()\n    return lamina\n\ndef zeroAreaFaces(self, list):\n    zeroAreaFaces = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n    \tfaceIt = om.MItMeshPolygon(selIt.getDagPath())\n    \tobjectName = selIt.getDagPath().getPath()\n    \twhile not faceIt.isDone():\n    \t    faceArea = faceIt.getArea()\n    \t    if faceArea < 0.000001:\n    \t        faceIndex = faceIt.index()\n    \t        componentName = str(objectName) + '.f[' + str(faceIndex) + ']'\n    \t        zeroAreaFaces.append(componentName)\n    \t    else:\n    \t        pass\n    \t    faceIt.next(None)\n    \tselIt.next()\n    return zeroAreaFaces\n\ndef zeroLengthEdges(self, list):\n    zeroLengthEdges = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n    \tedgeIt = om.MItMeshEdge(selIt.getDagPath())\n    \tobjectName = selIt.getDagPath().getPath()\n    \twhile not edgeIt.isDone():\n    \t    if edgeIt.length() < 0.00000001:\n    \t        componentName = str(objectName) + '.f[' + str(edgeIt.index()) + ']'\n    \t        zeroLengthEdges.append(componentName)\n    \t    edgeIt.next()\n    \tselIt.next()\n    return zeroLengthEdges\n\ndef selfPenetratingUVs(self, list):\n    selfPenetratingUVs = []\n    for obj in list:\n        shape = cmds.listRelatives(obj, shapes = True, fullPath = True)\n        convertToFaces = cmds.ls(cmds.polyListComponentConversion(shape, tf=True), fl=True)\n        overlapping = (cmds.polyUVOverlap(convertToFaces, oc=True ))\n        if overlapping is not None:\n            for obj in overlapping:\n                selfPenetratingUVs.append(obj)\n    return selfPenetratingUVs\n\ndef noneManifoldEdges(self, list):\n    noneManifoldEdges = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n        edgeIt = om.MItMeshEdge(selIt.getDagPath())\n        objectName = selIt.getDagPath().getPath()\n        while not edgeIt.isDone():\n            if edgeIt.numConnectedFaces() > 2:\n                edgeIndex = edgeIt.index()\n                componentName = str(objectName) + '.e[' + str(edgeIndex) + ']'\n                noneManifoldEdges.append(componentName)\n            else:\n                pass\n            edgeIt.next()\n        selIt.next()\n    return noneManifoldEdges\n\ndef openEdges(self, list):\n    openEdges = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n        edgeIt = om.MItMeshEdge(selIt.getDagPath())\n        objectName = selIt.getDagPath().getPath()\n        while not edgeIt.isDone():\n            if edgeIt.numConnectedFaces() < 2:\n                edgeIndex = edgeIt.index()\n                componentName = str(objectName) + '.e[' + str(edgeIndex) + ']'\n                openEdges.append(componentName)\n            else:\n                pass\n            edgeIt.next()\n        selIt.next()\n    return openEdges\n\ndef poles(self, list):\n    poles = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n        vertexIt = om.MItMeshVertex(selIt.getDagPath())\n        objectName = selIt.getDagPath().getPath()\n        while not vertexIt.isDone():\n            if vertexIt.numConnectedEdges() > 5:\n                vertexIndex = vertexIt.index()\n                componentName = str(objectName) + '.vtx[' + str(vertexIndex) + ']'\n                poles.append(componentName)\n            else:\n                pass\n            vertexIt.next()\n        selIt.next()\n    return poles\n\ndef starlike(self, list):\n    starlike = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n        polyIt = om.MItMeshPolygon(selIt.getDagPath())\n        objectName = selIt.getDagPath().getPath()\n        while not polyIt.isDone():\n            if polyIt.isStarlike() == False:\n                polygonIndex = polyIt.index()\n                componentName = str(objectName) + '.e[' + str(polygonIndex) + ']'\n                starlike.append(componentName)\n            else:\n                pass\n            polyIt.next(None)\n        selIt.next()\n    return starlike\n\n#UV checks\n\ndef missingUVs(self, list):\n    missingUVs = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n    \tfaceIt = om.MItMeshPolygon(selIt.getDagPath())\n    \tobjectName = selIt.getDagPath().getPath()\n    \twhile not faceIt.isDone():\n            if faceIt.hasUVs() == False:\n                componentName = str(objectName) + '.f[' + str(faceIt.index()) + ']'\n                missingUVs.append(componentName)\n    \t    faceIt.next(None)\n    \tselIt.next()\n    return missingUVs\n\n\ndef uvRange(self, list):\n    uvRange = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n    \tfaceIt = om.MItMeshPolygon(selIt.getDagPath())\n    \tobjectName = selIt.getDagPath().getPath()\n    \twhile not faceIt.isDone():\n            UVs = faceIt.getUVs()\n            for index, eachUVs in enumerate(UVs):\n                if index == 0:\n                    for eachUV in eachUVs:\n                        if eachUV < 0 or eachUV > 10:\n                            componentName = str(objectName) + '.f[' + str(faceIt.index()) + ']'\n                            uvRange.append(componentName)\n                            break\n                if index == 1:\n                    for eachUV in eachUVs:\n                        if eachUV < 0:\n                            componentName = str(objectName) + '.f[' + str(faceIt.index()) + ']'\n                            uvRange.append(componentName)\n                            break\n    \t    faceIt.next(None)\n    \tselIt.next()\n    return uvRange\n\ndef crossBorder(self, list):\n    crossBorder = []\n    selIt = om.MItSelectionList(self.SLMesh)\n    while not selIt.isDone():\n    \tfaceIt = om.MItMeshPolygon(selIt.getDagPath())\n    \tobjectName = selIt.getDagPath().getPath()\n    \twhile not faceIt.isDone():\n            U = None\n            V = None\n            UVs = faceIt.getUVs()\n            for index, eachUVs in enumerate(UVs):\n                if index == 0:\n                    for eachUV in eachUVs:\n                        if U == None:\n                            U = int(eachUV)\n                        if U != int(eachUV):\n                            componentName = str(objectName) + '.f[' + str(faceIt.index()) + ']'\n                            crossBorder.append(componentName)\n                if index == 1:\n                    for eachUV in eachUVs:\n                        if V == None:\n                            V = int(eachUV)\n                        if V != int(eachUV):\n                            componentName = str(objectName) + '.f[' + str(faceIt.index()) + ']'\n                            crossBorder.append(componentName)\n    \t    faceIt.next(None)\n    \tselIt.next()\n    return crossBorder\n\n# General checks\n\ndef unfrozenTransforms(self, list):\n    unfrozenTransforms = []\n    for obj in list:\n        translation = cmds.xform(obj, q=True, worldSpace = True, translation = True)\n        rotation = cmds.xform(obj, q=True, worldSpace = True, rotation = True)\n        scale = cmds.xform(obj, q=True, worldSpace = True, scale = True)\n        if not translation == [0.0,0.0,0.0] or not rotation == [0.0,0.0,0.0] or not scale == [1.0,1.0,1.0]:\n            unfrozenTransforms.append(obj)\n    return unfrozenTransforms\n\ndef layers(self, list):\n    layers = []\n    for obj in list:\n        layer = cmds.listConnections(obj, type = \"displayLayer\")\n        if layer is not None:\n            layers.append(obj)\n    return layers\n\ndef shaders(self, list):\n    shaders = []\n    for obj in list:\n        shadingGrps = None\n        shape = cmds.listRelatives(obj, shapes = True, fullPath = True)\n        if cmds.nodeType(shape) == 'mesh':\n            if shape is not None:\n                shadingGrps = cmds.listConnections(shape, type='shadingEngine');\n            if not shadingGrps[0] == 'initialShadingGroup':\n                shaders.append(obj)\n    return shaders\n\ndef history(self, list):\n    history = []\n    for obj in list:\n        shape = cmds.listRelatives(obj, shapes = True, fullPath = True)\n        if shape is not None:\n            if cmds.nodeType(shape[0]) == 'mesh':\n                historySize = len(cmds.listHistory(shape))\n                if historySize > 1:\n                    history.append(obj)\n    return history\n\ndef uncenteredPivots(self, list):\n    uncenteredPivots = []\n    for obj in list:\n        if cmds.xform(obj,q=1,ws=1,rp=1) != [0,0,0]:\n            uncenteredPivots.append(obj)\n    return uncenteredPivots\n\ndef emptyGroups(self, list):\n    emptyGroups = []\n    for obj in list:\n        children = cmds.listRelatives(obj, ad = True)\n        if children is None:\n            emptyGroups.append(obj)\n    return emptyGroups\n\ndef parentGeometry(self, list):\n    parentGeometry = []\n    shapeNode = False\n    for obj in list:\n        shapeNode = False\n        parents = cmds.listRelatives(obj, p = True, fullPath = True)\n        if parents is not None:\n            for i in parents:\n                parentsChildren = cmds.listRelatives(i, fullPath = True)\n                for l in parentsChildren:\n                    if cmds.nodeType(l) == 'mesh':\n                        shapeNode = True\n        if shapeNode == True:\n            parentGeometry.append(obj)\n    return parentGeometry\n\ndef getMainWindow():\n    main_window_ptr = omui.MQtUtil.mainWindow()\n    mainWindow = wrapInstance(long(main_window_ptr), QtWidgets.QWidget)\n    return mainWindow\n\nclass modelChecker(QtWidgets.QMainWindow):\n\n    def __init__(self, parent=getMainWindow()):\n        super(modelChecker, self).__init__(parent, QtCore.Qt.WindowStaysOnTopHint)\n\n        # Creates object, Title Name and Adds a QtWidget as our central widget/Main Layout\n        self.setObjectName(\"modelCheckerUI\")\n        self.setWindowTitle(\"Model Checker\")\n        mainLayout = QtWidgets.QWidget(self)\n        self.setCentralWidget(mainLayout)\n\n        # Adding a Horizontal layout to divide the UI in two columns\n        columns = QtWidgets.QHBoxLayout(mainLayout)\n\n        # Creating 2 vertical layout for the sanity checks and one for the report\n        self.report = QtWidgets.QVBoxLayout()\n        self.checks = QtWidgets.QVBoxLayout()\n\n        columns.addLayout(self.checks)\n        columns.addLayout(self.report)\n\n        # Adding UI ELEMENTS FOR CHECKS\n        selectedModelVLayout = QtWidgets.QHBoxLayout()\n        self.checks.addLayout(selectedModelVLayout)\n\n        selectedModelLabel = QtWidgets.QLabel(\"Top Node\")\n        selectedModelLabel.setMaximumWidth(60)\n\n        self.selectedTopNode_UI = QtWidgets.QLineEdit(\"\")\n        self.selectedTopNode_UI.setMaximumWidth(200)\n\n        self.selectedModelNodeButton = QtWidgets.QPushButton(\"Select\")\n        self.selectedModelNodeButton.setMaximumWidth(60)\n        self.selectedModelNodeButton.clicked.connect(self.setTopNode)\n\n        selectedModelVLayout.addWidget(selectedModelLabel)\n        selectedModelVLayout.addWidget(self.selectedTopNode_UI)\n        selectedModelVLayout.addWidget(self.selectedModelNodeButton)\n\n        # Adding UI elements to the repport\n        self.reportBoxLayout = QtWidgets.QHBoxLayout()\n        reportLabel = QtWidgets.QLabel(\"Report:\")\n\n        self.reportBoxLayout.addWidget(reportLabel)\n        self.report.addLayout(self.reportBoxLayout)\n\n        self.reportOutputUI = QtWidgets.QPlainTextEdit()\n\n        self.reportOutputUI.setMinimumWidth(600)\n        self.report.addWidget(self.reportOutputUI)\n\n        self.checkRunButton = QtWidgets.QPushButton(\"Run All Checked\")\n        self.checkRunButton.clicked.connect(self.sanityCheck)\n\n        self.report.addWidget(self.checkRunButton)\n\n        self.clearButton = QtWidgets.QPushButton(\"Clear\")\n        self.clearButton.setMaximumWidth(150)\n        self.clearButton.clicked.connect(partial(self.reportOutputUI.clear))\n\n        self.reportBoxLayout.addWidget(self.clearButton)\n\n        # Adding the stretch element to the checks UI to get everything at the top\n        self.resize(1000,900)\n        self.list = [\n                'trailingNumbers_naming_1_0',\n                'duplicatedNames_naming_1_0',\n                'shapeNames_naming_1_0',\n                'namespaces_naming_1_0',\n\n                'layers_general_1_0',\n                'history_general_1_0',\n                'shaders_general_1_0',\n                'unfrozenTransforms_general_1_0',\n                'uncenteredPivots_general_1_0',\n                'parentGeometry_general_1_0',\n                'emptyGroups_general_1_0',\n\n                'triangles_topology_0_0',\n                'ngons_topology_0_0',\n                'openEdges_topology_0_0',\n                'poles_topology_0_0',\n                'hardEdges_topology_0_0',\n                'lamina_topology_0_0',\n                'zeroAreaFaces_topology_0_0',\n                'zeroLengthEdges_topology_0_0',\n                'noneManifoldEdges_topology_0_0',\n                'starlike_topology_0_0',\n\n                'selfPenetratingUVs_UVs_0_0',\n                'missingUVs_UVs_0_0',\n                'uvRange_UVs_0_0',\n                'crossBorder_UVs_0_0'\n                ]\n\n        allCategories = []\n\n        for obj in self.list:\n            number = obj.split('_')\n            allCategories.append(number[1])\n\n        category = set(allCategories)\n        self.SLMesh = om.MSelectionList()\n\n        self.categoryLayout = {}\n        self.categoryWidget = {}\n        self.categoryButton = {}\n        self.categoryHeader = {}\n        self.categoryCollapse = {}\n        self.command = {}\n        self.commandWidget = {}\n        self.commandLayout = {}\n        self.commandLabel = {}\n        self.commandCheckBox = {}\n        self.errorNodesButton = {}\n        self.commandFixButton = {}\n        self.commandFix = {}\n        self.commandRunButton = {}\n\n        # Create the Categories section!!\n        for obj in category:\n            self.categoryWidget[obj] = QtWidgets.QWidget()\n            self.categoryLayout[obj] = QtWidgets.QVBoxLayout()\n            self.categoryHeader[obj] = QtWidgets.QHBoxLayout()\n            self.categoryButton[obj] = QtWidgets.QPushButton(obj)\n            self.categoryCollapse[obj] = QtWidgets.QPushButton(u'\\u2193'.encode('utf-8'))\n            self.categoryCollapse[obj].clicked.connect(partial(self.toggleUI, obj))\n            self.categoryCollapse[obj].setMaximumWidth(30)\n            self.categoryButton[obj].setStyleSheet(\"background-color: grey; text-transform: uppercase; color: #000000; font-size: 18px;\")\n            self.categoryButton[obj].clicked.connect(partial(self.checkCategory, obj))\n            self.categoryHeader[obj].addWidget(self.categoryButton[obj])\n            self.categoryHeader[obj].addWidget(self.categoryCollapse[obj])\n            self.categoryWidget[obj].setLayout(self.categoryLayout[obj])\n            self.checks.addLayout(self.categoryHeader[obj])\n            self.checks.addWidget(self.categoryWidget[obj])\n\n        # Creates the buttons with their settings.\n        for obj in self.list:\n            new = obj.split('_')\n            name = new[0]\n            category = new[1]\n            check = int(new[2])\n            fix = int(new[3])\n\n            self.commandWidget[name] = QtWidgets.QWidget()\n            self.commandWidget[name].setMaximumHeight(40)\n            self.commandLayout[name] = QtWidgets.QHBoxLayout()\n\n            self.categoryLayout[category].addWidget(self.commandWidget[name])\n            self.commandWidget[name].setLayout(self.commandLayout[name])\n\n            self.commandLayout[name].setSpacing(4)\n            self.commandLayout[name].setContentsMargins(0,0,0,0)\n            self.commandWidget[name].setStyleSheet(\"padding: 0px; margin: 0px;\")\n            self.command[name] = name\n            self.commandLabel[name] = QtWidgets.QLabel(name)\n            self.commandLabel[name].setMinimumWidth(120)\n            self.commandCheckBox[name] = QtWidgets.QCheckBox()\n\n            self.commandCheckBox[name].setChecked(check)\n            self.commandCheckBox[name].setMaximumWidth(20)\n\n            self.commandRunButton[name] = QtWidgets.QPushButton(\"Run\")\n            self.commandRunButton[name].setMaximumWidth(30)\n\n            self.commandRunButton[name].clicked.connect(partial(self.commandToRun, [eval(name)]))\n\n            self.errorNodesButton[name] = QtWidgets.QPushButton(\"Select Error Nodes\")\n            self.errorNodesButton[name].setEnabled(False)\n            self.errorNodesButton[name].setMaximumWidth(150)\n\n            self.commandFixButton[name] = QtWidgets.QPushButton(\"Fix\")\n\n            if fix == 1:\n                self.commandRunButton[name].clicked.connect(partial(self.commandToRun, [eval(name + \"_fix\")]))\n\n            self.commandFixButton[name].setEnabled(False)\n            self.commandFixButton[name].setMaximumWidth(40)\n\n            self.commandLayout[name].addWidget(self.commandLabel[name])\n            self.commandLayout[name].addWidget(self.commandCheckBox[name])\n            self.commandLayout[name].addWidget(self.commandRunButton[name])\n            self.commandLayout[name].addWidget(self.errorNodesButton[name])\n            self.commandLayout[name].addWidget(self.commandFixButton[name])\n\n        self.checks.addStretch()\n\n        self.checkButtonsLayout = QtWidgets.QHBoxLayout()\n        self.checks.addLayout(self.checkButtonsLayout)\n\n\n        self.uncheckAllButton = QtWidgets.QPushButton(\"Uncheck All\")\n        self.uncheckAllButton.clicked.connect(self.uncheckAll)\n\n        self.invertCheckButton = QtWidgets.QPushButton(\"Invert\")\n        self.invertCheckButton.clicked.connect(self.invertCheck)\n\n        self.checkAllButton = QtWidgets.QPushButton(\"Check All\")\n        self.checkAllButton.clicked.connect(self.checkAll)\n\n        self.checkButtonsLayout.addWidget(self.uncheckAllButton)\n        self.checkButtonsLayout.addWidget(self.invertCheckButton)\n        self.checkButtonsLayout.addWidget(self.checkAllButton)\n\n    # Definitions to manipulate the UI\n    def setTopNode(self):\n        sel = cmds.ls(selection = True)\n        self.selectedTopNode_UI.setText(sel[0])\n\n    # Checks the state of a given checkbox\n    def checkState(self, name):\n        return self.commandCheckBox[name].checkState()\n\n\n    # Sets all checkboxes to True\n    def checkAll(self):\n        for obj in self.list:\n            new = obj.split('_')\n            name = new[0]\n            self.commandCheckBox[name].setChecked(True)\n\n\n    def toggleUI(self, obj):\n       state = self.categoryWidget[obj].isVisible()\n       if state:\n           self.categoryCollapse[obj].setText(u'\\u21B5'.encode('utf-8'))\n           self.categoryWidget[obj].setVisible(not state)\n           self.adjustSize()\n       else:\n           self.categoryCollapse[obj].setText(u'\\u2193'.encode('utf-8'))\n           self.categoryWidget[obj].setVisible(not state)\n\n\n    # Sets all checkboxes to False\n    def uncheckAll(self):\n        for obj in self.list:\n            new = obj.split('_')\n            name = new[0]\n            self.commandCheckBox[name].setChecked(False)\n\n    # Sets the checkbox to the oppositve of current state\n    def invertCheck(self):\n        for obj in self.list:\n            new = obj.split('_')\n            name = new[0]\n            self.commandCheckBox[name].setChecked(not self.commandCheckBox[name].isChecked())\n\n\n    def checkCategory(self, category):\n\n        uncheckedCategoryButtons = []\n        categoryButtons = []\n\n        for obj in self.list:\n            new = obj.split('_')\n            name = new[0]\n            cat = new[1]\n            if cat == category:\n                categoryButtons.append(name)\n                if self.commandCheckBox[name].isChecked():\n                    uncheckedCategoryButtons.append(name)\n\n        for obj in categoryButtons:\n            if len(uncheckedCategoryButtons) == len(categoryButtons):\n                self.commandCheckBox[obj].setChecked(False)\n            else:\n                self.commandCheckBox[obj].setChecked(True)\n\n    ## Filter Nodes\n    def filterNodes(self):\n        nodes = []\n        self.SLMesh.clear()\n        allUsuableNodes = []\n        allNodes = cmds.ls(transforms = True)\n        for obj in allNodes:\n            if not obj in {'front', 'persp', 'top', 'side'}:\n                allUsuableNodes.append(obj)\n\n        selection = cmds.ls(sl = True)\n        topNode = self.selectedTopNode_UI.text()\n        if len(selection) > 0:\n            nodes = selection\n        elif self.selectedTopNode_UI.text() == \"\":\n            nodes = allUsuableNodes\n        else:\n            if cmds.objExists(topNode):\n                nodes = cmds.listRelatives(topNode, allDescendents = True, typ=\"transform\")\n                if not nodes:\n                    nodes = topNode\n                nodes.append(topNode)\n            else:\n                response = \"Object in Top Node doesn't exists\\n\"\n                self.reportOutputUI.clear()\n                self.reportOutputUI.insertPlainText(response)\n        for node in nodes:\n            shapes = cmds.listRelatives(node, shapes=True, typ=\"mesh\")\n            if shapes:\n                self.SLMesh.add(node)\n        return nodes\n\n    def commandToRun(self, commands):\n        # Run FilterNodes\n        nodes = self.filterNodes()\n        self.reportOutputUI.clear()\n        if len(nodes) == 0:\n            self.reportOutputUI.insertPlainText(\"Error - No nodes to check\\n\")\n        else:\n            for command in commands:\n                # For Each node in filterNodes, run command.\n                self.errorNodes = command(self, nodes)\n                # Return error nodes\n                if self.errorNodes:\n                    self.reportOutputUI.insertPlainText(command.func_name + \" -- FAILED\\n\")\n                    for obj in self.errorNodes:\n                        self.reportOutputUI.insertPlainText(\"    \" + obj + \"\\n\")\n\n                    self.errorNodesButton[command.func_name].setEnabled(True)\n                    self.errorNodesButton[command.func_name].clicked.connect(partial(self.selectErrorNodes, self.errorNodes))\n                    self.commandLabel[command.func_name].setStyleSheet(\"background-color: #664444;\")\n                else:\n                    self.commandLabel[command.func_name].setStyleSheet(\"background-color: #446644;\")\n                    self.reportOutputUI.insertPlainText(command.func_name + \" -- SUCCES\\n\")\n                    self.errorNodesButton[command.func_name].setEnabled(False)\n\n    # Write the report to report UI.\n    def sanityCheck(self):\n        self.reportOutputUI.clear()\n        checkedCommands = []\n        for obj in self.list:\n            new = obj.split('_')\n            name = new[0]\n            if self.commandCheckBox[name].isChecked():\n                checkedCommands.append(eval(name))\n            else:\n                self.commandLabel[name].setStyleSheet(\"background-color: none;\")\n        if len(checkedCommands) == 0:\n            print(\"You have to select something\")\n        else:\n            self.commandToRun(checkedCommands)\n\n    def selectErrorNodes(self, list):\n        cmds.select(list)\n\n    #this definition needs to run the Fix\n    def runFix(self, list, command):\n        print (\"yes\")\n\n\nif __name__ == '__main__':\n  try:\n      win.close()\n  except:\n      pass\n  win = modelChecker(parent=getMainWindow())\n  win.show()\n  win.raise_()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "medic" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import medicUI\nmedicUI.Show()" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "check3" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import medicUI\nmedicUI.Show()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "My errorChecker" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "from errorCheckingToolNeo import ErrorCheckingTool\nreload(ErrorC..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "myCheck" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from errorCheckingToolNeo import ErrorCheckingTool\nreload(ErrorCheckingTool)\nErrorCheckingTool.StartUI()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "errorChecker" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "errorChecker" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "D:/hogari/#01_Scripts/errorCheckingTool\\perryToolLogo.png" 
+        -image1 "D:/hogari/#01_Scripts/errorCheckingTool\\perryToolLogo.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from errorCheckingTool import ErrorCheckingTool\nErrorCheckingTool.StartUI()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Namespace Editor" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Namespace Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "NE" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "NamespaceEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import sys\nsys.path.append('N:\\GMR\\utility\\scripts')\nimport mocap.ui as mui\nmui.start_ui()\n" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import sys\nsys.path.append('N:\\GMR\\utility\\scripts')\nimport moca..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "mocap" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\nsys.path.append('N:\\GMR\\utility\\scripts')\nimport mocap.ui as mui\nmui.start_ui()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\ndef add_name_space(objs,ns=None):\n    for obj in objs:\n        #define locNS as ns in one for-loop\n        locNs = ns\n        if not locNs:\n            locNs = cmds.namespace(add=obj)            \n        \n        obj = cmds.rename(obj,'{}:{}'.format(locNs,obj.split('|')[-1]))\n        children = cmds.listRelatives(obj,pa=True)\n\n        if children:\n            add_name_space(children,ns=locNs)\n\n        #after recursion initialize locNs\n        locNs = None\n\n\nobjs = cmds.ls(sl=1)\nadd_name_space(objs)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\ndef add_name_space(objs,ns=None):\n    ..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "add ns" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\ndef add_name_space(objs,ns=None):\n    for obj in objs:\n        #define locNS as ns in one for-loop\n        locNs = ns\n        if not locNs:\n            locNs = cmds.namespace(add=obj)            \n        \n        obj = cmds.rename(obj,'{}:{}'.format(locNs,obj.split('|')[-1]))\n        children = cmds.listRelatives(obj,pa=True)\n\n        if children:\n            add_name_space(children,ns=locNs)\n\n        #after recursion initialize locNs\n        locNs = None\n\n\nobjs = cmds.ls(sl=1)\nadd_name_space(objs)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

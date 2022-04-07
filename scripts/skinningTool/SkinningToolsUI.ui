@@ -1,0 +1,2638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>624</width>
+    <height>1053</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="skintabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>252</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::West</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>4</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Tools</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="dockFrame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QScrollArea" name="verticalLayout_FrameDock">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="verticalLayout_FrameDockContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>601</width>
+                <height>69</height>
+               </rect>
+              </property>
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_FrameDockLayout">
+               <property name="margin">
+                <number>0</number>
+               </property>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="vertexMatchGB">
+             <property name="minimumSize">
+              <size>
+               <width>460</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>460</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="title">
+              <string/>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <property name="margin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_22">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QVBoxLayout" name="sublayoutVT1"/>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="sublayoutVT2"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="copyTransRangeGB">
+             <property name="minimumSize">
+              <size>
+               <width>230</width>
+               <height>192</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>230</width>
+               <height>192</height>
+              </size>
+             </property>
+             <property name="title">
+              <string/>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <property name="margin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_7">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>copy skin from source to target:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_9">
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="text">
+                     <string>look for closest amount vtx:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="closestspinBox">
+                    <property name="toolTip">
+                     <string>amount of points used to lookup</string>
+                    </property>
+                    <property name="statusTip">
+                     <string>amount of points used to lookup</string>
+                    </property>
+                    <property name="whatsThis">
+                     <string>amount of points used to lookup</string>
+                    </property>
+                    <property name="minimum">
+                     <number>1</number>
+                    </property>
+                    <property name="maximum">
+                     <number>10</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="transferSkinButton">
+                  <property name="toolTip">
+                   <string>transfer skin from object 1 to object 2 using range of vertices, object 2 does not need to have a skincluster</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>transfer skin from object 1 to object 2 using range of vertices, object 2 does not need to have a skincluster</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>transfer skin from object 1 to object 2 using range of vertices, object 2 does not need to have a skincluster</string>
+                  </property>
+                  <property name="text">
+                   <string>Transfer mesh to mesh</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <item>
+                   <widget class="QLineEdit" name="sourceLineEdit">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="sourceButton">
+                    <property name="toolTip">
+                     <string>insert source selection components</string>
+                    </property>
+                    <property name="statusTip">
+                     <string>insert source selection components</string>
+                    </property>
+                    <property name="whatsThis">
+                     <string>insert source selection components</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt; Source</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_5">
+                  <item>
+                   <widget class="QLineEdit" name="targetLineEdit">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="targetButton">
+                    <property name="toolTip">
+                     <string>insert target selection components</string>
+                    </property>
+                    <property name="statusTip">
+                     <string>insert target selection components</string>
+                    </property>
+                    <property name="whatsThis">
+                     <string>insert target selection components</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt; Target</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                  <item>
+                   <widget class="QPushButton" name="copyButton">
+                    <property name="toolTip">
+                     <string>copy component values from source to target using range of closest vertices</string>
+                    </property>
+                    <property name="statusTip">
+                     <string>copy component values from source to target using range of closest vertices</string>
+                    </property>
+                    <property name="whatsThis">
+                     <string>copy component values from source to target using range of closest vertices</string>
+                    </property>
+                    <property name="text">
+                     <string>Copy Components</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="resetButton">
+                    <property name="toolTip">
+                     <string>reset current saved seletions</string>
+                    </property>
+                    <property name="statusTip">
+                     <string>reset current saved seletions</string>
+                    </property>
+                    <property name="whatsThis">
+                     <string>reset current saved seletions</string>
+                    </property>
+                    <property name="text">
+                     <string>reset</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="vertexBoneFuncGB">
+             <property name="minimumSize">
+              <size>
+               <width>230</width>
+               <height>650</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>230</width>
+               <height>650</height>
+              </size>
+             </property>
+             <property name="title">
+              <string/>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <property name="margin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QGridLayout" name="gridLayout">
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetNoConstraint</enum>
+                </property>
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>3</number>
+                </property>
+                <item row="2" column="1">
+                 <widget class="QPushButton" name="ShowInfluencedButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>select the bone then the skin, it will select all influenced vertices</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>select the bone then the skin, it will select all influenced vertices</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>select the bone then the skin, it will select all influenced vertices</string>
+                  </property>
+                  <property name="text">
+                   <string>Select</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QPushButton" name="jointLabelButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>give all joints a label if propperly named with prefix &quot;L_&quot; and &quot;R_&quot; for easy mirroring skin</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>give all joints a label if propperly named with prefix &quot;L_&quot; and &quot;R_&quot; for easy mirroring skin</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>give all joints a label if propperly named with prefix &quot;L_&quot; and &quot;R_&quot; for easy mirroring skin</string>
+                  </property>
+                  <property name="text">
+                   <string> Label</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QPushButton" name="deleteBoneButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>to delete bones with influence, select skins and bones that influence eachother</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>to delete bones with influence, select skins and bones that influence eachother</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>to delete bones with influence, select skins and bones that influence eachother</string>
+                  </property>
+                  <property name="text">
+                   <string>del. Bone</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="Copy2BoneButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>select 2 bones, then the skin. it takes all the weights from bone 1 and applies them on bone 2.</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>select 2 bones, then the skin. it takes all the weights from bone 1 and applies them on bone 2.</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>select 2 bones, then the skin. it takes all the weights from bone 1 and applies them on bone 2.</string>
+                  </property>
+                  <property name="text">
+                   <string>Move</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QPushButton" name="unifyJointsButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>make sure that the joint influences of the selected objects are the same</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>make sure that the joint influences of the selected objects are the same</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>make sure that the joint influences of the selected objects are the same</string>
+                  </property>
+                  <property name="text">
+                   <string>unify infl.</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QPushButton" name="AvarageWeightButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>Select over 3 vertices, the last one will get the average weight between the previous vertices.</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>Select over 3 vertices, the last one will get the average weight between the previous vertices.</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>Select over 3 vertices, the last one will get the average weight between the previous vertices.</string>
+                  </property>
+                  <property name="text">
+                   <string>Average</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QPushButton" name="transfermayaskinbutton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>transfer skinning from 1 object to the other, will reset to the bindpose befor binding (right click for extra options)</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>transfer skinning from 1 object to the other, will reset to the bindpose befor binding (right click for extra options)</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>transfer skinning from 1 object to the other, will reset to the bindpose befor binding (right click for extra options)</string>
+                  </property>
+                  <property name="text">
+                   <string>copy Skin</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QPushButton" name="outButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>smooth only the edge of the selected region</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>smooth only the edge of the selected region</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>smooth only the edge of the selected region</string>
+                  </property>
+                  <property name="text">
+                   <string>neighbors</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QPushButton" name="Bone2BoneSwitchButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>select 2 bones, then the skin. it switches all the connected vertices.</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>select 2 bones, then the skin. it switches all the connected vertices.</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>select 2 bones, then the skin. it switches all the connected vertices.</string>
+                  </property>
+                  <property name="text">
+                   <string>Swap</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QPushButton" name="unifyByShellButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>converts selection to selection islands, forces hard surface skining on these shells based on average weight</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>converts selection to selection islands, forces hard surface skining on these shells based on average weight</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>converts selection to selection islands, forces hard surface skining on these shells based on average weight</string>
+                  </property>
+                  <property name="text">
+                   <string>Shell Unify</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QPushButton" name="switchVertexWeightButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>switch weight influences between 2 selected vertices</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>switch weight influences between 2 selected vertices</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>switch weight influences between 2 selected vertices</string>
+                  </property>
+                  <property name="text">
+                   <string>Switch</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="1">
+                 <widget class="QPushButton" name="showInflButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>select all vertices that use more influences then given by the user</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>select all vertices that use more influences then given by the user</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>select all vertices that use more influences then given by the user</string>
+                  </property>
+                  <property name="text">
+                   <string>show infl. &gt; max</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="1">
+                 <widget class="QFrame" name="frame_4">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="sizeConstraint">
+                    <enum>QLayout::SetMinimumSize</enum>
+                   </property>
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QFrame" name="frame_3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>110</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_3">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="margin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QSpinBox" name="maxInfluencesTextEdit">
+                        <property name="minimumSize">
+                         <size>
+                          <width>42</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>42</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="minimum">
+                         <number>1</number>
+                        </property>
+                        <property name="maximum">
+                         <number>9</number>
+                        </property>
+                        <property name="value">
+                         <number>8</number>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="maxInfluencesButton">
+                        <property name="minimumSize">
+                         <size>
+                          <width>68</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>68</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="toolTip">
+                         <string>set/convert the max amount of influences per vertex for selected objects</string>
+                        </property>
+                        <property name="statusTip">
+                         <string>set/convert the max amount of influences per vertex for selected objects</string>
+                        </property>
+                        <property name="whatsThis">
+                         <string>set/convert the max amount of influences per vertex for selected objects</string>
+                        </property>
+                        <property name="text">
+                         <string>max infl.</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QPushButton" name="selectInflJoints">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>select all joints influencing the current selected object</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>select all joints influencing the current selected object</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>select all joints influencing the current selected object</string>
+                  </property>
+                  <property name="text">
+                   <string>sel infl.</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QPushButton" name="addinflbutton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>add joints as influences to selected skinned meshes, will not override any of the weights</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>add joints as influences to selected skinned meshes, will not override any of the weights</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>add joints as influences to selected skinned meshes, will not override any of the weights</string>
+                  </property>
+                  <property name="text">
+                   <string>Joint infl.</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QPushButton" name="TransferPoseButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>transfer skinning from 1 object to the other, will transfer from the pose the object is in (right click for extra options)</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>transfer skinning from 1 object to the other, will transfer from the pose the object is in (right click for extra options)</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>transfer skinning from 1 object to the other, will transfer from the pose the object is in (right click for extra options)</string>
+                  </property>
+                  <property name="text">
+                   <string>copy Pose</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QPushButton" name="inAndOutButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>first smooth selected region + smooth edge of region for better fallof (right click for extra options)</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>first smooth selected region + smooth edge of region for better fallof (right click for extra options)</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>first smooth selected region + smooth edge of region for better fallof (right click for extra options)</string>
+                  </property>
+                  <property name="text">
+                   <string>+ neighbors</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QPushButton" name="SeperateSkin">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>seperate objects based on mesh shells, keeping skinning intact</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>seperate objects based on mesh shells, keeping skinning intact</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>seperate objects based on mesh shells, keeping skinning intact</string>
+                  </property>
+                  <property name="text">
+                   <string>seperate mesh</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QPushButton" name="keepSelectedInf">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>select joints and componenents, only the selected joints will influence current component selection</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>select joints and componenents, only the selected joints will influence current component selection</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>select joints and componenents, only the selected joints will influence current component selection</string>
+                  </property>
+                  <property name="text">
+                   <string>only Selected inf.</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="0">
+                 <widget class="QPushButton" name="SmoothButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>Select vertices, this will get the smooth value from all neighbours</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>Select vertices, this will get the smooth value from all neighbours</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>Select vertices, this will get the smooth value from all neighbours</string>
+                  </property>
+                  <property name="text">
+                   <string>Smooth</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>35</width>
+                    <height>35</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="0">
+                 <widget class="QPushButton" name="brushButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>open a brush that allows smoothing skindata for all joints at once</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>open a brush that allows smoothing skindata for all joints at once</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>open a brush that allows smoothing skindata for all joints at once</string>
+                  </property>
+                  <property name="text">
+                   <string>Sm. Brush</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="0">
+                 <widget class="QPushButton" name="convertToJointButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>converts current selection as a joint with its influences</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>converts current selection as a joint with its influences</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>converts current selection as a joint with its influences</string>
+                  </property>
+                  <property name="text">
+                   <string>convert To Joint</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QPushButton" name="Cop2MultVert">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>select vertices, the weight of the last vertice will be copied over to the previous selected vertices.</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>select vertices, the weight of the last vertice will be copied over to the previous selected vertices.</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>select vertices, the weight of the last vertice will be copied over to the previous selected vertices.</string>
+                  </property>
+                  <property name="accessibleName">
+                   <string>select vertices, the weight of the last vertice will be copied over to the previous selected vertices.</string>
+                  </property>
+                  <property name="accessibleDescription">
+                   <string>select vertices, the weight of the last vertice will be copied over to the previous selected vertices.</string>
+                  </property>
+                  <property name="text">
+                   <string>Copy</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QPushButton" name="getinfluencedMeshes">
+                  <property name="minimumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>110</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>select meshes that are influenced by all selected joints</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>select meshes that are influenced by all selected joints</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>select meshes that are influenced by all selected joints</string>
+                  </property>
+                  <property name="text">
+                   <string>infl. meshes</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>false</bool>
+                  </property>
+                  <property name="checked">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="Line" name="line_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_28">
+                <property name="spacing">
+                 <number>3</number>
+                </property>
+                <item>
+                 <widget class="QPushButton" name="resetJoints">
+                  <property name="toolTip">
+                   <string>Reset skin deformation for selected joint(s)</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>Reset skin deformation for selected joint(s)</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>Reset skin deformation for selected joint(s)</string>
+                  </property>
+                  <property name="text">
+                   <string>Reset Pose</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="selectalljointsCheck">
+                  <property name="contextMenuPolicy">
+                   <enum>Qt::DefaultContextMenu</enum>
+                  </property>
+                  <property name="toolTip">
+                   <string>if checked all joints will be used to reset pose</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>if checked all joints will be used to reset pose</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>if checked all joints will be used to reset pose</string>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
+                  <property name="text">
+                   <string>all joints</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="line_9">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="freezeJointButton">
+                  <property name="toolTip">
+                   <string>recalculated joint orient based on new orientation</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>recalculated joint orient based on new orientation</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>recalculated joint orient based on new orientation</string>
+                  </property>
+                  <property name="text">
+                   <string>Freeze Joint</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="Line" name="line">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <widget class="QLabel" name="label_6">
+                  <property name="minimumSize">
+                   <size>
+                    <width>36</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>skin:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="saveSkinclusterButton">
+                  <property name="text">
+                   <string>save &gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="savedSkinLineEdit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="loadSkinclusterButton">
+                  <property name="text">
+                   <string>&lt; load</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_18">
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="minimumSize">
+                   <size>
+                    <width>36</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>vertex:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="copyVertexWeightButton">
+                  <property name="text">
+                   <string>save &gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="vertexCopied">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                   <string>store weight value from one vertex to apply to others with load, the objects could be different as long as influences match!</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>store weight value from one vertex to apply to others with load, the objects could be different as long as influences match!</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>store weight value from one vertex to apply to others with load, the objects could be different as long as influences match!</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pasteVertexWeightButton">
+                  <property name="text">
+                   <string>&lt; load</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="Line" name="line_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>borderSelection</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_12">
+                <item>
+                 <widget class="QPushButton" name="storeInnerSelectionButton">
+                  <property name="toolTip">
+                   <string>store current selection as innermost selection</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>store current selection as innermost selection</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>store current selection as innermost selection</string>
+                  </property>
+                  <property name="text">
+                   <string>Store Inner</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="line_5">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="ShrinkBorderButton">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                   <string>shrink grown selectionborder</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>shrink grown selectionborder</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>shrink grown selectionborder</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt; shrink</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="GrowBorderButton">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                   <string>grow current selection border based on innermost selection</string>
+                  </property>
+                  <property name="statusTip">
+                   <string>grow current selection border based on innermost selection</string>
+                  </property>
+                  <property name="whatsThis">
+                   <string>grow current selection border based on innermost selection</string>
+                  </property>
+                  <property name="text">
+                   <string>grow &gt;</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="mayaToolsGB">
+                <property name="minimumSize">
+                 <size>
+                  <width>230</width>
+                  <height>380</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>230</width>
+                  <height>380</height>
+                 </size>
+                </property>
+                <property name="title">
+                 <string/>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="margin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <layout class="QVBoxLayout" name="VerticalMayaSkinToolsLayout">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Smooth Skin Editor</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QScrollArea" name="scrollAreaWidgetContents">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOn</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="widgetResizable">
+             <bool>false</bool>
+            </property>
+            <widget class="QWidget" name="stub">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>400</width>
+               <height>454</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QPushButton" name="ReloadButton">
+              <property name="text">
+               <string>Reload</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="LiveButton">
+              <property name="text">
+               <string>Live</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>Component Editor</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="componentLayout"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Weights Manager</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QPushButton" name="ExportWeights_Button">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="toolTip">
+               <string>export current selection as rarfile with all weights as xml</string>
+              </property>
+              <property name="statusTip">
+               <string>export current selection as rarfile with all weights as xml</string>
+              </property>
+              <property name="whatsThis">
+               <string>export current selection as rarfile with all weights as xml</string>
+              </property>
+              <property name="text">
+               <string>Export Skinweights</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line_10">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_29">
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="minimumSize">
+                 <size>
+                  <width>40</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>40</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>name:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="SkinFilename_LineEdit">
+                <property name="toolTip">
+                 <string>if given name, it will be added to list below, if not: user needs to specify folder</string>
+                </property>
+                <property name="statusTip">
+                 <string>if given name, it will be added to list below, if not: user needs to specify folder</string>
+                </property>
+                <property name="whatsThis">
+                 <string>if given name, it will be added to list below, if not: user needs to specify folder</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="listWidget"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>prefer: </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_12">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="WorldPos_radioButton">
+              <property name="text">
+               <string>world Positions</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="UvPos_radioButton">
+              <property name="text">
+               <string>uv Positions</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="amountSpinBox">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>10</number>
+              </property>
+              <property name="value">
+               <number>3</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QPushButton" name="ImportWeights_Button">
+              <property name="toolTip">
+               <string>import weights based on selection above, if no selection present will allow user to dearch in directory</string>
+              </property>
+              <property name="statusTip">
+               <string>import weights based on selection above, if no selection present will allow user to dearch in directory</string>
+              </property>
+              <property name="whatsThis">
+               <string>import weights based on selection above, if no selection present will allow user to dearch in directory</string>
+              </property>
+              <property name="text">
+               <string>import Skinweights</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="DeleteWeights_Button">
+              <property name="toolTip">
+               <string>delete selected skinweights from list above</string>
+              </property>
+              <property name="statusTip">
+               <string>delete selected skinweights from list above</string>
+              </property>
+              <property name="whatsThis">
+               <string>delete selected skinweights from list above</string>
+              </property>
+              <property name="text">
+               <string>delete Skinweights</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>bind skin (BETA)</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_19">
+        <item>
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>583</width>
+             <height>959</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_16">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="groupBox">
+              <property name="title">
+               <string>visualisation</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_14">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="Line" name="line_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_17">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <spacer name="horizontalSpacer_7">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_12">
+                   <property name="text">
+                    <string>coverage: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="coverageSPBX">
+                   <property name="minimum">
+                    <double>0.010000000000000</double>
+                   </property>
+                   <property name="maximum">
+                    <double>0.990000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>0.010000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>0.900000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_13">
+                   <property name="text">
+                    <string>primary axis: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="primaryCB">
+                   <property name="minimumSize">
+                    <size>
+                     <width>40</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>40</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="currentIndex">
+                    <number>1</number>
+                   </property>
+                   <property name="maxVisibleItems">
+                    <number>3</number>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>x</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>y</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>z</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPushButton" name="skVisualiserButton">
+                 <property name="text">
+                  <string>skeleton visualiser</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_19">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string>transperancy: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="transSpinBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximum">
+                    <double>1.000000000000000</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>0.010000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>1.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_20">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_9">
+                   <property name="text">
+                    <string>radius: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="radiusSpinBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="value">
+                    <double>15.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_21">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_10">
+                   <property name="text">
+                    <string>segments: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QSlider" name="segmentsSlider">
+                   <property name="minimumSize">
+                    <size>
+                     <width>75</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="minimum">
+                    <number>3</number>
+                   </property>
+                   <property name="maximum">
+                    <number>12</number>
+                   </property>
+                   <property name="value">
+                    <number>6</number>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="segmentsSpinBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="minimum">
+                    <number>3</number>
+                   </property>
+                   <property name="maximum">
+                    <number>10</number>
+                   </property>
+                   <property name="value">
+                    <number>6</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QFrame" name="colorFrame1">
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="colorLayoutvis_1">
+                  <property name="spacing">
+                   <number>3</number>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_14">
+                    <property name="text">
+                     <string>disc Color: </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="colorFrame2">
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="colorLayoutvis_2">
+                  <property name="spacing">
+                   <number>3</number>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_15">
+                    <property name="text">
+                     <string>visual Color: </string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_9">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="colorFrame3">
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="colorLayoutvis_3">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_19">
+                    <property name="text">
+                     <string>selection Color:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_23">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_11">
+                   <property name="text">
+                    <string>amount connected: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="amoundConnSpinBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="minimum">
+                    <number>2</number>
+                   </property>
+                   <property name="maximum">
+                    <number>100</number>
+                   </property>
+                   <property name="value">
+                    <number>3</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_24">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <widget class="QCheckBox" name="cullingcheckBox">
+                   <property name="text">
+                    <string>culling discs</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="autoScaleCheckBox">
+                   <property name="text">
+                    <string>auto scale discs</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="selMaskcheckBox">
+                   <property name="text">
+                    <string>selection masking</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="drawInFrontCheck">
+                   <property name="text">
+                    <string>Draw in Front</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_6">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string>create skinbind</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_17">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="Line" name="line_7">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_25">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <spacer name="horizontalSpacer_10">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_16">
+                   <property name="text">
+                    <string>bind divisions: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="divSP">
+                   <property name="minimum">
+                    <number>3</number>
+                   </property>
+                   <property name="maximum">
+                    <number>20</number>
+                   </property>
+                   <property name="value">
+                    <number>8</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_17">
+                   <property name="text">
+                    <string>smoothValue:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="smoothSP">
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="value">
+                    <number>3</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPushButton" name="skBindSkinButton">
+                 <property name="text">
+                  <string>bind skin</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>surface detection</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_18">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="Line" name="line_8">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_26">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="analyseSelectionButton">
+                   <property name="text">
+                    <string>Analyse</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QProgressBar" name="selectionProgressBar">
+                   <property name="value">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_27">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="hardSkinButton">
+                   <property name="text">
+                    <string>hard skin</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="softSkinButton">
+                   <property name="text">
+                    <string>soft skin</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_11">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_18">
+                   <property name="text">
+                    <string>add selection group:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="addColorButton">
+                   <property name="minimumSize">
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>+</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QScrollArea" name="scrollArea">
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="widgetResizable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignHCenter|Qt::AlignTop</set>
+                 </property>
+                 <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>581</width>
+                    <height>522</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="colorAttachLayout">
+                   <property name="spacing">
+                    <number>3</number>
+                   </property>
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="cleanSkbSceneBtn">
+                 <property name="text">
+                  <string>clean scene</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="tool_progressBar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>624</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <action name="actionHold_model">
+   <property name="text">
+    <string>hold model</string>
+   </property>
+  </action>
+  <action name="actionFetch_model">
+   <property name="text">
+    <string>fetch model</string>
+   </property>
+  </action>
+  <action name="actionUnlock_beta">
+   <property name="text">
+    <string>unlock beta tab</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,257 @@
+"""
+-----------------------------------------------------
+Arnold auto set Subdivisions by Jacob Ramirez Furlong
+-----------------------------------------------------
+
+Copy and paste this into script editor and save as shelf after installing to Documents > maya > [Maya Version] > scripts:
+
+import autoSetSubD
+reload(autoSetSubD)
+autoSetSubD.autoSubDiv()
+
+"""
+
+import maya.cmds as cmds
+import math
+
+def autoSubDiv():
+	#get vars from option boxes
+	def getOptions(*args):
+		subdivType = cmds.optionMenu("subdivType", q = True, v = True)
+		if subdivType == "none":
+			subdivTypeNum = 0
+		elif subdivType =="catclark":
+			subdivTypeNum = 1
+		else:
+			subdivTypeNum = 2
+		
+		subdivMethod = cmds.optionMenu("subdivMethod", q = True, v = True)
+		subdivIterations = cmds.intField("subdivIterations", q = True, v = True)
+		camera = cmds.optionMenu("cameraOptions", q = True, v = True)
+		
+		#get resolution
+		resolution = cmds.getAttr("defaultResolution.width")
+		
+		#choose which function to use based on method option input
+		if subdivMethod == "Automatic":
+			subDivCalc(resolution, camera)
+		else:
+			subDivManual(subdivIterations, subdivTypeNum)
+	
+	def is_group(object):
+			children = cmds.listRelatives(object)
+				
+			if children is None:
+				return False
+			elif all(cmds.nodeType(child) == "transform" for child in children):
+				return True
+			else:
+				return False
+		
+		
+	def can_subdiv(object):
+		mesh = cmds.listRelatives(object)
+		if cmds.attributeQuery("aiSubdivIterations", node = mesh[0], ex = True):
+			return True
+		else:
+			return False
+				
+	#Gets subdivisions based on distance from camera, render resolution, and focal length
+	def subDivCalc(res, cam):
+		error = 0
+		selection = cmds.ls(sl = True)
+
+		# get polygons per centimeter of surface area
+		def getPolyCm(selection):
+		  area = cmds.polyEvaluate(selection,wa = True)
+		  faceCount = cmds.polyEvaluate(selection,f = True)
+		  
+		  polyCm = faceCount / area
+		  return polyCm
+		  
+		"""
+		def getBBoxDist(selection):
+			bbox = cmds.polyEvaluate(selection, b = True)
+			Xmin = bbox[0][0]
+			Ymin = bbox[1][0]
+			Zmin = bbox[2][0]
+			Xmax = bbox[0][1]
+			Ymax = bbox[1][1]
+			Zmax = bbox[2][1]
+
+			dist = math.sqrt(((Xmin - Xmax) ** 2) + ((Ymin - Ymax) ** 2) + ((Zmin - Zmax) ** 2))
+			return dist
+		"""
+		
+		#get distance of object from camera position (P)
+		def getDist(camP, objP):
+			camX = camP[0][0]
+			camY = camP[0][1]
+			camZ = camP[0][2]
+			objX = objP[0]
+			objY = objP[1]
+			objZ = objP[2]
+			
+			dist = math.sqrt(((objX - camX) ** 2) + ((objY - camY) ** 2) + ((objZ - camZ) ** 2))
+			
+			return dist
+			
+		# get approximate pixels in screen space wide per centimeter in world space
+		def getPxCm(dist,fl):
+			#pixels of 1cm at 35mm
+			if dist == res:
+				pxCm = (res + 1) / dist
+			elif dist == 0:
+				pxCm = res / 1
+			else:
+				pxCm = res / dist
+			#get image length
+			mag = fl / 35
+			px = pxCm * mag
+			return px
+			
+		#Calculate subdiv level
+		def getSubDiv(px,poly):
+			subDiv = math.log((px/poly), 4)
+			if subDiv < 0:
+				subDiv = 0
+			return subDiv	
+			
+		#set variables using functions
+		camPos = cmds.getAttr ('%s.translate' %(cam))
+		
+		#find whether node is group (has only transforms as children)
+		
+				
+		def subdivide(object):
+			objPos = cmds.xform(str(object), q = True, rp = True)
+			fl = cmds.camera (cam, q = True, fl = True)
+
+			#dist = abs(getDist(camPos, objPos) - getBBoxDist(object))
+		  
+			dist = getDist(camPos, objPos)
+
+			px = getPxCm(dist, fl)
+			polyCm = getPolyCm(object)
+
+			subDiv = getSubDiv(px,polyCm)
+			  
+			"""
+			print "obj pos: " + str(objPos)
+			print "cam pos: " + str(camPos)
+			print "dist: " + str(dist)
+			print "pixel Per Cm: " + str(px)
+			print "poly per Cm " + str(polyCm)
+			print "subdiv: " + str(subDiv)
+			"""
+
+			cmds.setAttr ('%s.aiSubdivIterations' % (object), subDiv)
+			cmds.setAttr("%s.aiSubdivType" % (object), 1)
+		
+		for object in selection:
+			try:
+				#if node selected is shape make object be the transform parent of that shape
+				if cmds.nodeType(object) == "mesh":
+					object == cmds.listRelatives(object, p = True)
+					continue
+				
+				if is_group(object) is False and can_subdiv(object) is True:
+					subdivide(object)
+			except:
+				error = error + 1
+		
+		if error > 0:	
+			print str(error) + " object(s) skipped due to duplicate names"
+		
+	# manually sets subdivisions on all objects
+	def subDivManual(i, t):
+		#set subdiv type and subdiv iterations for each object selected
+		selection = cmds.ls(long = True, selection = True)
+		error = 0
+		for shape in selection:
+			try:
+				if cmds.nodeType(shape) == "mesh":
+					shape == cmds.listRelatives(shape, p = True)
+					continue
+				if is_group(shape) is False and can_subdiv(shape) is True:
+					cmds.setAttr("%s.aiSubdivType" % (shape), int(t))
+					cmds.setAttr("%s.aiSubdivIterations" % (shape), int(i))
+		
+			except:
+				error += 1
+		
+		if error > 0:
+			print str(error) + " object(s) skipped due to duplicate names"
+			
+	#check to see if window already exists
+	if cmds.window("subdivUI", exists = True):
+		cmds.deleteUI("subdivUI")
+		
+	wide = 300
+	height = 400
+	#create window
+	window = cmds.window("subdivUI", t = "Arnold Auto Subdiv", w = wide, h = height, sizeable = False)
+	
+	cmds.windowPref("subdivUI", w = wide, h = height, tlc = [250, 500])
+	
+	#create a main layout
+	mainLayout = cmds.columnLayout(w = wide, h = height, co = ("left", 10))
+	
+	#create options for subdiv type
+	cmds.separator(h = 10)
+	subdivTypeOptionMenu = cmds.optionMenu("subdivType",w = 250, label = "Subdiv type: ")
+	
+	#populate subdiv type options
+	cmds.menuItem(label = "catclark", parent = "subdivType")
+	cmds.menuItem(label = "none", parent = "subdivType")
+	cmds.menuItem(label = "linear", parent = "subdivType")	
+	
+	cmds.separator(h = 15)
+	
+	#subdiv method options
+	cmds.text("Automatic: set Arnold subdivisions based on distance") 
+	cmds.text("from camera, focal length, and mesh density." )
+	cmds.separator(h = 5)
+	cmds.text("Manual: set all subdivisions to same values") 
+	cmds.separator(h = 10)
+	subdivMethod= cmds.optionMenu("subdivMethod", w = 250, label = "Subdiv method: ")
+	
+	#populate subdiv method options
+	cmds.menuItem("automatic", label = "Automatic", parent = "subdivMethod")
+	cmds.menuItem("manual", label = "Manual", parent = "subdivMethod")	
+	
+	#camera options
+	cmds.separator(h = 15)
+	cmds.optionMenu("cameraOptions", w = 250, label = "Camera: ")
+	
+	#populate camera options
+	camSelection = cmds.ls (type = "camera")
+	for camera in camSelection:
+		camTransform = cmds.listRelatives(camera, parent = True) 
+		if cmds.getAttr("%s.orthographic" % (camTransform[0])) == True:
+			foo = 0
+		else:
+			cmds.menuItem("%s" % (camTransform[0]), label = "%s" % (camTransform[0]), parent = "cameraOptions")
+	
+	
+	#subdiv options 
+	cmds.separator(h = 30)
+	cmds.text("Subdiv Iterations: ")
+	cmds.separator(h = 10)
+	cmds.intField("subdivIterations", )
+	
+	
+	#Make Button
+	cmds.separator(h = 15)
+	cmds.text("Make sure to set render resolution, freeze transforms,")
+	cmds.text("and select meshes before running script.")
+	cmds.text("Will not work if you have only group selected or")
+	cmds.text("if you have objects with duplicate names.")
+	cmds.separator(h = 15)
+	cmds.button(label = "Subdivide", h = 50, w = 100, command = getOptions)
+	
+	
+	#show window
+	cmds.showWindow(window)
+		
+autoSubDiv()

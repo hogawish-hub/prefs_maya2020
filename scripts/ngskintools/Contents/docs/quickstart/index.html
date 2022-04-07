@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Quick Start - ngSkinTools user guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../styles.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Quick Start";
+    var mkdocs_page_input_path = "quickstart.md";
+    var mkdocs_page_url = "/quickstart/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> ngSkinTools user guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Welcome</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">Quick Start</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#quick-start">Quick Start</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#get-your-rig-ready">Get your rig ready</a></li>
+        
+            <li><a class="toctree-l3" href="#initialize-skinning-layers">Initialize skinning layers</a></li>
+        
+            <li><a class="toctree-l3" href="#start-painting-weights">Start painting weights</a></li>
+        
+            <li><a class="toctree-l3" href="#add-more-layers">Add more layers</a></li>
+        
+            <li><a class="toctree-l3" href="#mirror-weights">Mirror weights</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../videos/index.html">Videos</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../layers/index.html">Layers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../mirroring/index.html">Mirroring</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ui/index.html">User Interface</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../faq/index.html">FAQ</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../api/index.html">API</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ngSkinTools user guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Quick Start</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
+<p>This guide, aimed for new ngSkinTools users, explains how you could start taking first steps when using the plugin. This is not an in-depth guide nor a highlight of best features of plugin - instead, just some ngSkinTools workflow basics to get started with.</p>
+<p>If you prefer video tutorial instead, <a href="../videos/index.html#1-quickstart">there's one available as well</a>, covering pretty much the same thing.</p>
+<p>It is assumed that the reader is already somewhat familiar with rigging and skinning essentials using standard Maya tools. </p>
+<h2 id="get-your-rig-ready">Get your rig ready<a class="headerlink" href="#get-your-rig-ready" title="Permanent link">&para;</a></h2>
+<p><img alt="rig" class="ui-screenshot" src="../_img/quickstart/rig-ready.jpg" /></p>
+<p>To begin using ngSkinTools, you should already have a smooth-skin-bound mesh. Either open one of your existing rigs, or load up a new mesh and bind it to joints using smooth bind (<code>Skin &gt; Bind Skin &gt; Smooth Bind</code>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You might have other deformers in deformation chain after skin cluster - for example, poly smooth node; if any of them change vertex order in the mesh, turn those off.</p>
+</div>
+<h2 id="initialize-skinning-layers">Initialize skinning layers<a class="headerlink" href="#initialize-skinning-layers" title="Permanent link">&para;</a></h2>
+<p>Select your mesh and open ngSkinTools ("ngSkinTools" button in "Custom" shelf)
+<img alt="custom tab" class="ui-screenshot" src="../_img/installation/custom-tab.jpg" /></p>
+<p>Most of the UI will be disabled as plugin needs some more additional setup to be done before you can use all the features of ngSkinTools on your mesh. Select the mesh you want to skin, an you should see something similar to this:</p>
+<p><img alt="initialize" class="ui-screenshot" src="../_img/quickstart/initialize.jpg" /></p>
+<p>This shows the discovered mesh shape from your selection, and skin cluster that is attached to it. Click "Initialize Skinning Layers" button.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the curious, this attaches a temporary node in the scene that will store skinning layers information for the selected skin cluster. </p>
+</div>
+<p>The UI changes to this:</p>
+<p><img alt="initial layer" class="ui-screenshot" src="../_img/quickstart/initial-layer.jpg" /></p>
+<p>The list on the left is layers. This is where you select active layer, and can also add/remove/arrange them. After initializing ngSkinTools layers for the first time, a single layer will be created, which has all the original weights on the skin cluster. </p>
+<p>On the right influences (joints) are being listed. This list is used to select influence to paint weights for, or a group of influences for some other operation.</p>
+<h2 id="start-painting-weights">Start painting weights<a class="headerlink" href="#start-painting-weights" title="Permanent link">&para;</a></h2>
+<p>Painting is  similar to how it is done with <code>Paint Skin Weights Tool</code> in Maya. Click <code>Paint</code> button at the bottom of <code>Paint</code> tab to start the paint tool.</p>
+<p><img alt="" class="ui-screenshot" src="../_img/quickstart/paint-mode.jpg" /></p>
+<p>Now, select a layer in layer list, an influence in influences list, and, using one of the paint tools (Replace, Add, Scale or Smooth) start editing weights. Paint settings are somewhat identical to what they are in standard <code>Paint Skin Weights Tool</code>, but you'll notice a few differences:</p>
+<ul>
+<li>Brush intensity is saved and restored separately for each paint mode. It makes more sense that for <code>Scale</code> you would usually use a large value, something like <code>.9</code>, while <code>Add</code> better works with small increments, like <code>.1</code>.</li>
+<li>Smoothing brush operates operates on all influences in a vertex. You should notice a very intuitive response from the brush.</li>
+</ul>
+<p>See <a href="../ui/index.html#paint-tab">Paint Tab</a> if you need more assistance in understanding this UI.</p>
+<h2 id="add-more-layers">Add more layers<a class="headerlink" href="#add-more-layers" title="Permanent link">&para;</a></h2>
+<p>Skinning layers is a very powerful tool. Just like in your favorite image editing application, layers will allow you to paint in multiple "planes". Paint spine weights in one layer, arms on the other, and ngSkinTools will combine this real-time into single weights "image" for skinCluster to use.</p>
+<p>As we're just getting the first feel here, just create a few of them (right-click layers list and choose <code>New Layer</code>), without worrying if you need them or not.</p>
+<p><img alt="" class="ui-screenshot" src="../_img/quickstart/new-layer.jpg" /></p>
+<p>Now, try experimenting. What happens if you flood all weights to <code>joint1</code> on the lower layer, and paint on some vertices  to the <code>joint2</code> in the upper layer? Not really impressive yet, <code>joint2</code> simply overrides <code>joint1</code>. </p>
+<p>The real magic happens when you go back to lower layer, and add some weights for <code>joint3</code>. Weights will be shared between <code>joint1</code> and <code>joint3</code>, but then previously painted <code>joint2</code> will override areas where it's painted.</p>
+<p>Now try doing something more practical. In lowest layer, flood everything to just spine joints. In higher layer, paint just shoulders. Add few more layers for arms, hips, legs, props.. Before you do though, have a quick look at <a href="../layers/index.html#layer-transparency">controlling layer transparency</a>.</p>
+<h2 id="mirror-weights">Mirror weights<a class="headerlink" href="#mirror-weights" title="Permanent link">&para;</a></h2>
+<p>Mirroring is a bit different in ngSkinTools. The process is divided into two parts: </p>
+<ul>
+<li><strong>Initializing mirror info</strong>: this is where plugin memorizes how vertices and influences on one side map to the other side. You only have to do this once, unless you add more influences later;</li>
+<li><strong>Mirroring weights</strong>: because plugin already knows how to find left and right side, you can repeat this as many times as you want in any pose.     </li>
+</ul>
+<p>To initialize mirror info, put your rig into neutral position, go to <code>Mirror</code> tab and click <code>Initialize</code>. In the dialog that opens, click <code>Initialize</code> to accept default options.
+To begin using mirror function (via <code>Mirror</code> button in <code>Paint</code> tab, or from the <code>Mirror</code> tab), you have to initialize mirror information first. </p>
+<p><img alt="" class="ui-screenshot" src="../_img/quickstart/mirror.jpg" /></p>
+<p>Put your rig into neutral position, go to <code>Mirror</code> tab and click <code>Initialize</code>. In the dialog that opens, click <code>Initialize</code> to accept default options.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even though default options might work for basic rigs, there are quite a few features for controlling mirror behavior in <code>Initialize Mirror</code> window. See <a href="../ui/index.html#mirror-tab">Mirror Tab</a> for details.</p>
+</div>
+<p>Mirror is now enabled for the mesh. Choose which direction to mirror (from left to right side or vice versa), select layers to mirror (you can select multiple layers holding Shift or Ctrl buttons), and click <code>Mirror</code>.</p>
+<p>See <a href="../ui/index.html#mirror-tab">Mirror Tab</a> section for more detailed explanations of mirroring options.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../videos/index.html" class="btn btn-neutral float-right" title="Videos">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Welcome"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../videos/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

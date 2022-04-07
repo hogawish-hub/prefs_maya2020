@@ -1,0 +1,3 @@
+import engi.prjscript.gmr.inmaya as egmr
+reload(egmr)
+egmr.export_alembics_from_shot_info('Chr','bokl')

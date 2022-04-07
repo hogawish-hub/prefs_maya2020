@@ -1,0 +1,2 @@
+import namespace_set_tool.namespace_by_asset as nsba
+nsba.run()

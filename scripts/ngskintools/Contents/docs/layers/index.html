@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Layers - ngSkinTools user guide</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../styles.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Layers";
+    var mkdocs_page_input_path = "layers.md";
+    var mkdocs_page_url = "/layers/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> ngSkinTools user guide</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Welcome</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../quickstart/index.html">Quick Start</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../videos/index.html">Videos</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">Layers</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#layers">Layers</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#layer-transparency">Layer Transparency</a></li>
+        
+            <li><a class="toctree-l3" href="#normalizing-weights">Normalizing weights</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../mirroring/index.html">Mirroring</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ui/index.html">User Interface</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../faq/index.html">FAQ</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../api/index.html">API</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ngSkinTools user guide</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Layers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="layers">Layers<a class="headerlink" href="#layers" title="Permanent link">&para;</a></h1>
+<h2 id="layer-transparency">Layer Transparency<a class="headerlink" href="#layer-transparency" title="Permanent link">&para;</a></h2>
+<p>Each layer has transparency. Just like in image editing, you most probably want upper layers to be "seen through", so that lower layers can be uncovered where needed.</p>
+<p>To make a vertex "transparent" in a layer, you can do three things:</p>
+<ol>
+<li>Paint weights on the vertex so that the sum of all weights is below 1.0.</li>
+<li>Use Layer Masks.</li>
+<li>Adjust overall layer opacity in layer properties (see <a href="../ui/index.html#layers-list">UI</a> for details)</li>
+</ol>
+<p>While for a quick result, option 1 might seam feasible, a much more reliable way of controlling layer transparency is via mask. </p>
+<p>You might have noticed that a first item in "influences" list is <code>[Layer Mask]</code>. It is a multiplier for the whole layer.</p>
+<h2 id="normalizing-weights">Normalizing weights<a class="headerlink" href="#normalizing-weights" title="Permanent link">&para;</a></h2>
+<p><em>Described behavior was introduced in version 1.4. Previously some weight upscaling was being happenning as well in some cases.</em> </p>
+<p>Weights in each layer are normalized so that sum of weights per each vertex does not exceed 1.0. This is not configurable and there's no way to enable "post-normalization" like there is in the skin cluster.</p>
+<p>However, layers do allow sum of weights to be lower than 1.0. These all are valid weights in a layer:</p>
+<table>
+<thead>
+<tr>
+<th>vertex #</th>
+<th>joint 1</th>
+<th>joint 2</th>
+<th>joint 3</th>
+<th>(comment)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0.2</td>
+<td>0.8</td>
+<td>0</td>
+<td>sum of weights: 1.0; no transparency.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.2</td>
+<td>0.3</td>
+<td>0.5</td>
+<td>sum: 1.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.2</td>
+<td>0.4</td>
+<td>0</td>
+<td>sum: 0.6; vertex has 40% transparency</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100% transparency</td>
+</tr>
+</tbody>
+</table>
+<p>When you're editing weights, these rules of automatic weight normalization are applied:</p>
+<ul>
+<li>Weight for current influence is restricted to <code>[0..1]</code> range, and otherwise is not modified. Painting "replace joint1 with value 0.6" results in exact value 0.6 on joint1;</li>
+<li>If needed, weights on other influences are reduced proportionally to accommodate the change;</li>
+<li>Weights on other influences are ONLY reduced, never upscaled; if you paint "replace 0.0 on joint 1", this does not mean that weight will be distributed on other joints in the layer;   </li>
+<li>For "smooth" paint mode, current influence does not exist and all weights are treated equally.</li>
+</ul>
+<p>Example weight transitions for changes being made to a single vertex:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>joint 1</th>
+<th>joint 2</th>
+<th>joint 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial weights</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Replace weights on <code>joint 2</code> with 1.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Add 0.1 on <code>joint 2</code>: no effect</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Add 0.1 on <code>joint 1</code>: weight on joint 2 reduced</td>
+<td>0.1</td>
+<td>0.9</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Scale 0.5 on <code>joint 2</code>: other weights not impacted, vertex becomes transparent</td>
+<td>0.1</td>
+<td>0.45</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mirroring/index.html" class="btn btn-neutral float-right" title="Mirroring">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../videos/index.html" class="btn btn-neutral" title="Videos"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../videos/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mirroring/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

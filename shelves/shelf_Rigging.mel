@@ -1,0 +1,1780 @@
+global proc shelf_Rigging () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Create Locator: Create a locator object on the grid" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Create Locator" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "locator.png" 
+        -image1 "locator.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CreateLocator" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Create Joints: Click to place joint, click on existing joint to add to skeleton, click/drag to position joint" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Create Joints" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "kinJoint.png" 
+        -image1 "kinJoint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "JointTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "JointToolOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Create IK Handle: Create IK handle on joint chain" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Create IK Handle" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "kinHandle.png" 
+        -image1 "kinHandle.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "IKHandleTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "IKHandleToolOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Bind Skin: Smooth bind skin" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Bind Skin" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "smoothSkin.png" 
+        -image1 "smoothSkin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SmoothBindSkin" 
+        -sourceType "mel" 
+        -doubleClickCommand "SmoothBindSkinOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    separator
+        -enable 1
+        -width 12
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -style "shelf" 
+        -horizontal 0
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Paint Skin Weights: Paint weights on smooth bound skins" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Paint Skin Weights" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "paintSkinWeights.png" 
+        -image1 "paintSkinWeights.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ArtPaintSkinWeightsTool" 
+        -sourceType "mel" 
+        -doubleClickCommand "ArtPaintSkinWeightsToolOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    separator
+        -enable 1
+        -width 12
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -style "shelf" 
+        -horizontal 0
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Parent Constraint: Constrain one object to the position/orientation/scale of another." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Parent Constraint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "parentConstraint.png" 
+        -image1 "parentConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ParentConstraint" 
+        -sourceType "mel" 
+        -doubleClickCommand "ParentConstraintOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Point Constraint: Constrain one object to the position of another." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Point Constraint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "posConstraint.png" 
+        -image1 "posConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "PointConstraint" 
+        -sourceType "mel" 
+        -doubleClickCommand "PointConstraintOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 33
+        -enable 1
+        -width 36
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Orient Constraint: Constrain one object to the orientation of another." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Orient Constraint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "orientConstraint.png" 
+        -image1 "orientConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "OrientConstraint" 
+        -sourceType "mel" 
+        -doubleClickCommand "OrientConstraintOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Scale Constraint: Constrain one object to the scale of another." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Scale Constraint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "scaleConstraint.png" 
+        -image1 "scaleConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ScaleConstraint" 
+        -sourceType "mel" 
+        -doubleClickCommand "ScaleConstraintOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Aim Constraint: Constrain one mesh to always point towards another." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Aim Constraint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "aimConstraint.png" 
+        -image1 "aimConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "AimConstraint" 
+        -sourceType "mel" 
+        -doubleClickCommand "AimConstraintOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Pole Vector Constraint: Constrain the end of an IK handle to follow the position of an object." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Pole Vector Constraint" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "poleVectorConstraint.png" 
+        -image1 "poleVectorConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "PoleVectorConstraint" 
+        -sourceType "mel" 
+        -doubleClickCommand "PoleVectorConstraintOptions" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    separator
+        -enable 1
+        -width 12
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -style "shelf" 
+        -horizontal 0
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add influence options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "addInfluenceDialog" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "addWrapInfluence.png" 
+        -image1 "addWrapInfluence.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "AddInfluenceOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "from skinningTool import SkinningToolsUI\n\nSkinningToolsUI.startUI()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "from skinningTool import SkinningToolsUI\n\nSkinningToolsUI.startU..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from skinningTool import SkinningToolsUI\n\nSkinningToolsUI.startUI()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Edit various component values for the selected object(s)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Component Editor" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CpEd" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconWindow.png" 
+        -image1 "menuIconWindow.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ComponentEditor" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Removes the selected influence from the selected skinCluster" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Remove Influence" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "removeWrapInfluence.png" 
+        -image1 "removeWrapInfluence.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "RemoveInfluence" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\nsel = cmds.ls(sl=1)\npos = cmds.xform(sel,q=1,t=1,ws=1)\nofs = cmds.group(em=1,n='ofs'+sel[0])\ncmds.setAttr(ofs+'.translate',pos[0],pos[1],pos[2],type='double3')\ncmds.parent(sel,ofs)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\nsel = cmds.ls(sl=1)\npos = cmds.xform(se..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "ofs" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\nsels = cmds.ls(sl=1)\n\nfor sel in sels:\n\tpos = cmds.xform(sel,q=1,t=1,ws=1)\n\trot = cmds.xform(sel,q=1,ro=1,ws=1)\n\tofs = cmds.group(em=1,n='ofs'+sel[0])\n\tcmds.setAttr(ofs+'.translate',pos[0],pos[1],pos[2],type='double3')\n\tcmds.setAttr(ofs+'.rotate',rot[0],rot[1],rot[2],type='double3')\n\tcmds.parent(sel,ofs)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Change weights on selected nonlinear" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Nonlinear" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Nonl" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconDeformations.png" 
+        -image1 "menuIconDeformations.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "PaintNonlinearWeightsTool" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import os\nfrom PySide2.QtCore import *\nfrom PySide2.QtWidgets import *\nimport maya.cmds as cmds\nimport maya.api.OpenMaya as om\nimport math\nimport HogaWidget as hw\nreload(hw)\n\n\nclass MainWindow(QMainWindow):\n    def __init__(self,parent = None):\n        super(MainWindow, self).__init__(parent)\n        self.setWindowTitle('playblastToolForAnim')\n        self.resize(300,20)\n        widget = MainWidgets()\n        self.setCentralWidget(widget)\n\n\n\nclass MainWidgets(QWidget):\n    def __init__(self,*args,**kwargs):\n\n        #prepare necessary variables\n\n        self.path =''\n        self.fileName ='playblast'\n        self.resoWidth = cmds.getAttr('defaultResolution.width')\n        self.resoHeight = cmds.getAttr('defaultResolution.height')\n        self.renderCam = 'persp'\n        self.startTime = int(cmds.playbackOptions(q=1,min=1))\n        self.endTime = int(cmds.playbackOptions(q=1,max=1))\n\n\n        super(MainWidgets,self).__init__(*args,**kwargs)\n        mainLayout = QVBoxLayout()\n        self.setLayout(mainLayout)\n\n\n        #Prepare widgets\n\n        #select render camera\n        texwidgetCam =QLabel('render camera')\n        camNameEdit = QLineEdit()\n        camNameEdit.setText(self.renderCam)\n        camNameEdit.textChanged.connect(self._setCamName)\n\n        camButton = QPushButton('Select')\n        camButton.clicked.connect(lambda: self._setSelectedCam(camNameEdit))\n\n\n\n\n\n\n        #resolution\n        resoTex =QLabel('resolution')\n\n        resoWidget = hw.HWHMultSpinBox(num=2)\n        resoWidget.setAllButtonHided()\n        resoWidget.setAllRange(10,10000)\n        \n\n        resoWidth = resoWidget.spinBoxList[0]\n        resoHeight = resoWidget.spinBoxList[1]\n\n        resoWidth.setValue(self.resoWidth)\n        resoWidth.valueChanged.connect(self._setResoWidth)\n        resoHeight.setValue(self.resoHeight)\n        resoHeight.valueChanged.connect(self._setResoHeight)\n\n\n        \n        \n\n\n        #start and end time\n        timeTex =QLabel('strat frame to end frame')\n\n        frameRangeWidget = hw.HWHMultSpinBox(num=2)\n        #frameRangeWidget.setAllButtonHided()\n        frameRangeWidget.setAllRange(-100,1000)\n        frameRangeWidget.setAllMaximumWidth(80)\n\n        startTime = frameRangeWidget.spinBoxList[0]\n        endTime = frameRangeWidget.spinBoxList[1]\n\n\n        startTime.setValue(self.startTime)\n        startTime.valueChanged.connect(self._setStratTime)\n\n        endTime.setValue(self.endTime)\n        endTime.valueChanged.connect(self._setEndTime)\n\n\n        \n        \n        #decide filename       \n        fileNameTex =QLabel('filename')\n        fileNameEdit = QLineEdit()\n        fileNameEdit.setText('playblast')\n        fileNameEdit.textChanged.connect(lambda:self._setFileName(fileNameEdit))\n\n\n        \n        #select directry\n        fileButton = QPushButton('Select Directory')\n        fileButton.clicked.connect(lambda: self._selectDir(fileNameEdit))\n        \n        #runButton\n        runButton = QPushButton('playblast')\n        runButton.clicked.connect(lambda: engiPlayblastToolForAnimMain(\n            self.startTime,self.endTime,self.fileName,self.resoWidth,self.resoHeight,self.renderCam,self.path\n        ))\n\n        #Decide Layouts\n        mainLayout.addWidget(texwidgetCam)\n        mainLayout.addWidget(camNameEdit)\n        mainLayout.addWidget(camButton)\n        mainLayout.addWidget(resoTex)\n        mainLayout.addWidget(resoWidget)\n        mainLayout.addWidget(fileNameTex)\n        mainLayout.addWidget(fileNameEdit)\n        mainLayout.addWidget(fileButton)\n        mainLayout.addWidget(timeTex)\n        mainLayout.addWidget(frameRangeWidget)\n        mainLayout.addWidget(runButton)\n       \n\n\n    \n    def _setFileName(self,lineEdit):\n        fileName = lineEdit.text()\n        lists = fileName.split('\\\\')\n        l = len(lists)\n        self.fileName = lists[l-1]\n        self.path =''\n        if l > 1:\n            for k in range(l-1):\n                self.path += lists[k]+'\\\\'\n    def _selectDir(self,lineEdit):\n        dirName = QFileDialog.getExistingDirectory(self, 'Select Directory', os.path.expanduser('~') + '/Desktop')\n        dirName = dirName.replace('/','\\\\')\n        lineEdit.setText(dirName+'\\\\'+self.fileName)\n    def _setResoWidth(self,resoWidthEdit):\n        self.resoWidth= resoWidthEdit\n    def _setResoHeight(self,resoHeightEdit):\n        self.resoHeight= resoHeightEdit\n    def printReso(self):\n        print self.startTime,self.endTime\n    def _setCamName(self,camName):\n        self.renderCam=camName\n    def _setSelectedCam(self,camEdit):\n        self.renderCam = cmds.ls(sl=1)[0]\n        camEdit.setText(self.renderCam)\n    def _setStratTime(self,st):\n        self.stratTime = st\n    def _setEndTime(self,et):\n        self.endTime = et\n\n\n\n        \n\n\n\ndef engiPlayblastToolForAnimMain(st,et,fileName,resoWidth,resoHeight,renderCam,path=''):\n    panel = cmds.getPanel(wf = 1)\n    pbPanel = cmds.playblast(ae=1)\n    if cmds.modelPanel(panel,exists=1) == False:\n        \n        #if checked panel is not model panel,give message\n        cmds.confirmDialog(m='Please click the view',icn='critical')\n\n    #get the active camera \n    camActive = cmds.modelPanel(panel, q=True, camera=True)\n    print camActive\n    #change the camera\n    cmds.modelEditor(panel,e=1,cam= renderCam)\n    cmds.modelEditor(pbPanel,e=1,cam= renderCam)\n\n\n    #difine the path\n    if path =='':\n        path = cmds.workspace(q=True,rootDirectory=1)+'\\\\movies\\\\'\n        if os.path.exists(path)==False:\n            os.mkdir(path)\n\n\n \n\n    #playblast\n    cmds.playblast(st=st,et=et,fo = 1,w = resoWidth,h = resoHeight,v = False,c = 'h264',\n                   fmt = 'qt',f =r''+path+fileName,p = 100)\n    \n\n    cmds.modelEditor(panel,e=1,cam= camActive)\n    cmds.modelEditor(pbPanel,e=1,cam= camActive)\n\n\n\n\n\n\ndef engiPlayblastToolForAnim():\n    window = MainWindow(hw.getTopLevelWidget('MayaWindow'))\n    window.show()\n\n\nengiPlayblastToolForAnim()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import os\nfrom PySide2.QtCore import *\nfrom PySide2.QtWidgets im..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "PBTAnim" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import os\nfrom PySide2.QtCore import *\nfrom PySide2.QtWidgets import *\nimport maya.cmds as cmds\nimport maya.api.OpenMaya as om\nimport math\nimport HogaWidget as hw\nreload(hw)\n\n\nclass MainWindow(QMainWindow):\n    def __init__(self,parent = None):\n        super(MainWindow, self).__init__(parent)\n        self.setWindowTitle('playblastToolForAnim')\n        self.resize(300,20)\n        widget = MainWidgets()\n        self.setCentralWidget(widget)\n\n\n\nclass MainWidgets(QWidget):\n    def __init__(self,*args,**kwargs):\n\n        #prepare necessary variables\n\n        self.path =''\n        self.fileName ='playblast'\n        self.resoWidth = cmds.getAttr('defaultResolution.width')\n        self.resoHeight = cmds.getAttr('defaultResolution.height')\n        self.renderCam = 'persp'\n        self.startTime = int(cmds.playbackOptions(q=1,min=1))\n        self.endTime = int(cmds.playbackOptions(q=1,max=1))\n\n\n        super(MainWidgets,self).__init__(*args,**kwargs)\n        mainLayout = QVBoxLayout()\n        self.setLayout(mainLayout)\n\n\n        #Prepare widgets\n\n        #select render camera\n        texwidgetCam =QLabel('render camera')\n        camNameEdit = QLineEdit()\n        camNameEdit.setText(self.renderCam)\n        camNameEdit.textChanged.connect(self._setCamName)\n\n        camButton = QPushButton('Select')\n        camButton.clicked.connect(lambda: self._setSelectedCam(camNameEdit))\n\n\n\n\n\n\n        #resolution\n        resoTex =QLabel('resolution')\n\n        resoWidget = hw.HWHMultSpinBox(num=2)\n        resoWidget.setAllButtonHided()\n        resoWidget.setAllRange(10,10000)\n        \n\n        resoWidth = resoWidget.spinBoxList[0]\n        resoHeight = resoWidget.spinBoxList[1]\n\n        resoWidth.setValue(self.resoWidth)\n        resoWidth.valueChanged.connect(self._setResoWidth)\n        resoHeight.setValue(self.resoHeight)\n        resoHeight.valueChanged.connect(self._setResoHeight)\n\n\n        \n        \n\n\n        #start and end time\n        timeTex =QLabel('strat frame to end frame')\n\n        frameRangeWidget = hw.HWHMultSpinBox(num=2)\n        #frameRangeWidget.setAllButtonHided()\n        frameRangeWidget.setAllRange(-100,1000)\n        frameRangeWidget.setAllMaximumWidth(80)\n\n        startTime = frameRangeWidget.spinBoxList[0]\n        endTime = frameRangeWidget.spinBoxList[1]\n\n\n        startTime.setValue(self.startTime)\n        startTime.valueChanged.connect(self._setStratTime)\n\n        endTime.setValue(self.endTime)\n        endTime.valueChanged.connect(self._setEndTime)\n\n\n        \n        \n        #decide filename       \n        fileNameTex =QLabel('filename')\n        fileNameEdit = QLineEdit()\n        fileNameEdit.setText('playblast')\n        fileNameEdit.textChanged.connect(lambda:self._setFileName(fileNameEdit))\n\n\n        \n        #select directry\n        fileButton = QPushButton('Select Directory')\n        fileButton.clicked.connect(lambda: self._selectDir(fileNameEdit))\n        \n        #runButton\n        runButton = QPushButton('playblast')\n        runButton.clicked.connect(lambda: engiPlayblastToolForAnimMain(\n            self.startTime,self.endTime,self.fileName,self.resoWidth,self.resoHeight,self.renderCam,self.path\n        ))\n\n        #Decide Layouts\n        mainLayout.addWidget(texwidgetCam)\n        mainLayout.addWidget(camNameEdit)\n        mainLayout.addWidget(camButton)\n        mainLayout.addWidget(resoTex)\n        mainLayout.addWidget(resoWidget)\n        mainLayout.addWidget(fileNameTex)\n        mainLayout.addWidget(fileNameEdit)\n        mainLayout.addWidget(fileButton)\n        mainLayout.addWidget(timeTex)\n        mainLayout.addWidget(frameRangeWidget)\n        mainLayout.addWidget(runButton)\n       \n\n\n    \n    def _setFileName(self,lineEdit):\n        fileName = lineEdit.text()\n        lists = fileName.split('\\\\')\n        l = len(lists)\n        self.fileName = lists[l-1]\n        self.path =''\n        if l > 1:\n            for k in range(l-1):\n                self.path += lists[k]+'\\\\'\n    def _selectDir(self,lineEdit):\n        dirName = QFileDialog.getExistingDirectory(self, 'Select Directory', os.path.expanduser('~') + '/Desktop')\n        dirName = dirName.replace('/','\\\\')\n        lineEdit.setText(dirName+'\\\\'+self.fileName)\n    def _setResoWidth(self,resoWidthEdit):\n        self.resoWidth= resoWidthEdit\n    def _setResoHeight(self,resoHeightEdit):\n        self.resoHeight= resoHeightEdit\n    def printReso(self):\n        print self.startTime,self.endTime\n    def _setCamName(self,camName):\n        self.renderCam=camName\n    def _setSelectedCam(self,camEdit):\n        self.renderCam = cmds.ls(sl=1)[0]\n        camEdit.setText(self.renderCam)\n    def _setStratTime(self,st):\n        self.stratTime = st\n    def _setEndTime(self,et):\n        self.endTime = et\n\n\n\n        \n\n\n\ndef engiPlayblastToolForAnimMain(st,et,fileName,resoWidth,resoHeight,renderCam,path=''):\n    panel = cmds.getPanel(wf = 1)\n    pbPanel = cmds.playblast(ae=1)\n    if cmds.modelPanel(panel,exists=1) == False:\n        \n        #if checked panel is not model panel,give message\n        cmds.confirmDialog(m='Please click the view',icn='critical')\n\n    #get the active camera \n    camActive = cmds.modelPanel(panel, q=True, camera=True)\n    print camActive\n    #change the camera\n    cmds.modelEditor(panel,e=1,cam= renderCam)\n    cmds.modelEditor(pbPanel,e=1,cam= renderCam)\n\n\n    #difine the path\n    if path =='':\n        path = cmds.workspace(q=True,rootDirectory=1)+'\\\\movies\\\\'\n        if os.path.exists(path)==False:\n            os.mkdir(path)\n\n\n \n\n    #playblast\n    cmds.playblast(st=st,et=et,fo = 1,w = resoWidth,h = resoHeight,v = False,c = 'h264',\n                   fmt = 'qt',f =r''+path+fileName,p = 100)\n    \n\n    cmds.modelEditor(panel,e=1,cam= camActive)\n    cmds.modelEditor(pbPanel,e=1,cam= camActive)\n\n\n\n\n\n\ndef engiPlayblastToolForAnim():\n    window = MainWindow(hw.getTopLevelWidget('MayaWindow'))\n    window.show()\n\n\nengiPlayblastToolForAnim()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Constrain one object to the vertex of another." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Point On Poly" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pointOnPolyConstraint.png" 
+        -image1 "pointOnPolyConstraint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "doCreatePointOnPolyConstraintArgList 2 {   \"0\" ,\"0\" ,\"0\" ,\"1\" ,\"\" ,\"1\" ,\"0\" ,\"0\" ,\"0\" ,\"0\" };" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "IK spline handle tool options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "handleSplineDialogItem" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "kinSplineHandle.png" 
+        -image1 "kinSplineHandle.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "IKSplineHandleToolOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select hierarchy" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Hierarchy" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Hier" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconSelect.png" 
+        -image1 "menuIconSelect.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SelectHierarchy" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Toggle local rotation axis visibility" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Local Rotation Axes" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "LRA" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconDisplay.png" 
+        -image1 "menuIconDisplay.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "ToggleLocalRotationAxes" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "DoraSkinWeightImpExp()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "DoraSkinWeightImpExp()" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Draskin" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "commandButton.png" 
+        -image1 "commandButton.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DoraSkinWeightImpExp()" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Deforms geometry along a circular sine wave." 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Wave" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "waveNLD.png" 
+        -image1 "waveNLD.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "Wave" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Orient joint options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "orientJointOptionItem" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "orientJoint.png" 
+        -image1 "orientJoint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "OrientJointOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "connect FKctrl" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "from HogaRigOperation import *\n\nconnectCtrlToBone()" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "cnctCtrl" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from HogaRigOperation import *\n\nconnectCtrlToFKBone()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "group double" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "from HogaRigOperation import *\n\ndoubleOffsetCtrl()" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "DGroup" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from HogaRigOperation import *\n\ndoubleOffsetCtrl()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Rename objects in scene" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Search and Replace Names..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "SaRN" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SearchAndReplaceNames" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Returns the skeleton to the position where its bind pose was set" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Go to Bind Pose" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "goToBindPose.png" 
+        -image1 "goToBindPose.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "GoToBindPose" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Move joints on smooth bound skins" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Move Skinned Joints" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "moveSkinnedJoint.png" 
+        -image1 "moveSkinnedJoint.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "MoveSkinJointsTool" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Detach skin" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Unbind Skin" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "detachSkin.png" 
+        -image1 "detachSkin.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "DetachSkin" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Add blend shape options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "menuItem845" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "blendShapePlus.png" 
+        -image1 "blendShapePlus.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "AddBlendShapeOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Rename objects in scene" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Search and Replace Names..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "SaRN" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "SearchAndReplaceNames" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Freeze transformation options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "identityApplyItemOption" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Fto" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "FreezeTransformationsOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Mirror joint options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "mirrorJointOptionItem" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "kinMirrorJoint_S.png" 
+        -image1 "kinMirrorJoint_S.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "MirrorJointOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Select an object(s)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Center Pivot" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "CP" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CenterPivot" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Bake Pivot options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "bakePivotItemOption" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "BPo" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "menuIconModify.png" 
+        -image1 "menuIconModify.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "BakeCustomPivotOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "CtrlColorFreeChange" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "CtrlColorFreeChange" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Ctrl" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from selectsEdit import ctrlColorFreeChenge as ps; ps.main()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\nimport HogaRigOperation as hro\n\nreload(hro)\n\n\n#hro.createLocCtlToJnt(rad=1,nr=[1,0,0])\n\nsels = cmds.ls(sl=1) \nhro.moveByTwoObj(sels[0],sels[1],sels[2])\n" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\nimport HogaRigOperation as hro\n\nreload(..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "adjGrp" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\nimport HogaRigOperation as hro\n\nreload(hro)\n\n\n#hro.createLocCtlToJnt(rad=1,nr=[1,0,0])\n\nsels = cmds.ls(sl=1) \nhro.moveByTwoObj(sels[0],sels[1],sels[2])\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\nimport HogaRigOperation as hro\n\nreload(hro)\n\n\nhro.createLocCtlToJnt(rad=1,nr=[1,0,0])\n\n#sels = cmds.ls(sl=1) \n#hro.moveByTwoObj(sels[0],sels[1],sels[2])\n" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\nimport HogaRigOperation as hro\n\nreload(..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "createCtl" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\nimport HogaRigOperation as hro\n\nreload(hro)\n\n\nhro.createLocCtlToJnt(rad=60,nr=[1,0,0])\n\n#sels = cmds.ls(sl=1) \n#hro.moveByTwoObj(sels[0],sels[1],sels[2])\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Mirror skin weights options" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "mirrorSkinWeightsDialog" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "mirrorSkinWeight.png" 
+        -image1 "mirrorSkinWeight.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "MirrorSkinWeightsOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "make jnt rad larger  " 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\njnts = cmds.ls(typ ='joint')\n\nfor jnt ..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "jnt rad" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\n\njnts = cmds.ls(typ ='joint')\n\n\nfor jnt in jnts:\n    org = cmds.getAttr('{}.radius'.format(jnt))\n    cmds.setAttr('{}.radius'.format(jnt),org + 1.0)" 
+        -sourceType "python" 
+        -doubleClickCommand "import maya.cmds as cmds\n\n\njnts = cmds.ls(typ ='joint')\n\n\nfor jnt in jnts:\n    org = cmds.getAttr('{}.radius'.format(jnt))\n    cmds.setAttr('{}.radius'.format(jnt),org + 6.0)" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\n\ncmds.select(cmds.ls('*Upv*','*Chain*',typ = 'joint'))" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\n\ncmds.select(cmds.ls('*Upv*','*Chain*'..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "sel jnt none" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\n\ncmds.select(cmds.ls('*Upv*','*Chain*',typ = 'joint'))" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import HogaRigOperation as hro\nimport maya.cmds as cmds\n\nreload(hro)\n\nsel = cmds.ls(sl=True)\nhro.setSameTransform(sel[0],sel[1])" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import HogaRigOperation as hro\nimport maya.cmds as cmds\n\nreload(..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "same pos" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import HogaRigOperation as hro\nimport maya.cmds as cmds\n\nreload(hro)\n\nsel = cmds.ls(sl=True)\nhro.setSameTransform(sel[0],sel[1])" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\nLays = cmds.ls(typ='displayLayer')\nLays.remove('defaultLayer')\n\ncmds.delete(Lays)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\nLays = cmds.ls(typ='displayLayer')\nLay..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Del Lay" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\nLays = cmds.ls(typ='displayLayer')\nLays.remove('defaultLayer')\n\ncmds.delete(Lays)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Copies the skin weights of the selected source skin to the selected destination skin" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Copy Skin Weights" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "copySkinWeight.png" 
+        -image1 "copySkinWeight.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "CopySkinWeights" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Replace Shape" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "Replace Shape" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "RS" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "pymel.internal.factories.callback" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds\n\njnts = cmds.ls(type='joint')\n\nfor jnt in jnts:\n    cmds.setAttr('{}.radius'.format(jnt),14)" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import maya.cmds as cmds\n\njnts = cmds.ls(type='joint')\n\nfor jnt ..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -imageOverlayLabel "JntRad14" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds\n\njnts = cmds.ls(type='joint')\n\nfor jnt in jnts:\n    cmds.setAttr('{}.radius'.format(jnt),14)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import sys\nsys.path.append('N:\\GMR\\utility\\scripts\\HUDPlayblust')\nimport setHUD as HUD\nreload(HUD)\nHUD.set_HUD()" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "import sys\nsys.path.append('N:\\GMR\\utility\\scripts\\HUDPlayblust'..." 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import sys\nsys.path.append('N:\\GMR\\utility\\scripts\\HUDPlayblust')\nimport setHUD as HUD\nreload(HUD)\nHUD.set_HUD()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -flexibleWidthType 3
+        -flexibleWidthValue 32
+        -enable 1
+        -width 35
+        -height 34
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Studio Library" 
+        -enableBackground 0
+        -backgroundColor 0 0 0 
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "N:\\GMR\\utility\\scripts\\studiolibrary-2.7.1\\src\\studiolibrary\\resource\\icons\\icon.png" 
+        -image1 "N:\\GMR\\utility\\scripts\\studiolibrary-2.7.1\\src\\studiolibrary\\resource\\icons\\icon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n# -----------------------------------\n# Studio Library\n# www.studiolibrary.com\n# -----------------------------------\n\nimport os\nimport sys\n    \nif not os.path.exists(r'N:\\GMR\\utility\\scripts\\studiolibrary-2.7.1\\src'):\n    raise IOError(r'The source path \"N:\\GMR\\utility\\scripts\\studiolibrary-2.7.1\\src\" does not exist!')\n    \nif r'N:\\GMR\\utility\\scripts\\studiolibrary-2.7.1\\src' not in sys.path:\n    sys.path.insert(0, r'N:\\GMR\\utility\\scripts\\studiolibrary-2.7.1\\src')\n    \nimport studiolibrary\nstudiolibrary.main()\n" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

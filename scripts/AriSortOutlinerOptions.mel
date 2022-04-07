@@ -1,0 +1,81 @@
+//--------------------------------------------------------------------------
+//
+// ScriptName : AriSortOutlinerOptions
+// Contents   : AriSortOutlinerのオプション
+// Author     : Ari
+// URL        : http://cgjishu.net/
+// Update     : 2018/05/26 選択順ソート追加
+// Since      : 2018/05
+//
+//--------------------------------------------------------------------------
+
+
+global proc AriSortOutlinerOptions_Save(){
+	
+	global string $AriSortOutliner_UI_reverseCB;
+	global string $AriSortOutliner_UI_modeRB[];
+	
+	int $reverseTrue = false;
+	int $sortMode    = false;
+	
+	$reverseTrue = `checkBox -q -v $AriSortOutliner_UI_reverseCB`;
+	if(`radioButton -q -sl $AriSortOutliner_UI_modeRB[0]`)$sortMode=0;
+	if(`radioButton -q -sl $AriSortOutliner_UI_modeRB[1]`)$sortMode=1;
+	if(`radioButton -q -sl $AriSortOutliner_UI_modeRB[2]`)$sortMode=2;
+	optionVar -intValue   "AriSortOutliner_reverse" $reverseTrue;
+	optionVar -intValue   "AriSortOutliner_type"    $sortMode;
+}
+global proc AriSortOutliner_GO(){
+	AriSortOutlinerOptions_Save();
+	AriSortOutliner();
+}
+global proc AriSortOutlinerOptions(){
+	global string $AriSortOutliner_UI_reverseCB;
+	global string $AriSortOutliner_UI_modeRB[];
+	int $jpTrue = false;
+	if(`about -uil`=="ja_JP")$jpTrue = true;
+	else $jpTrue = false;
+	string $label_reverse = "Reverse Order  ";
+	string $label_name = "Name  ";
+	string $label_type = "Type/Name  ";
+	string $label_selects = "Selects  ";
+	if($jpTrue){
+		$label_reverse = "降順  ";
+		$label_name = "名前  ";
+		$label_type = "種類/名前  ";
+		$label_selects = "選択  ";
+	}
+	int $reverseTrue = false;
+	int $sortMode    = false;
+	if(`optionVar -exists "AriSortOutliner_reverse"`)	$reverseTrue = `optionVar -q "AriSortOutliner_reverse"`;
+	if(`optionVar -exists "AriSortOutliner_type"`)		$sortMode    = `optionVar -q "AriSortOutliner_type"`;
+	if((`window -ex  AriSortOutlinerOptions`)==true)deleteUI AriSortOutlinerOptions;
+	window -title "AriSortOutlinerOptions" -tlb true -w 200 -h 50 AriSortOutlinerOptions;
+	string $form = `formLayout`;
+	string $column = `columnLayout -adj true`;
+	radioCollection;
+	rowLayout -nc 3;
+	$AriSortOutliner_UI_modeRB[0] = `radioButton -l $label_name`;
+	$AriSortOutliner_UI_modeRB[1] = `radioButton -l $label_type`;
+	$AriSortOutliner_UI_modeRB[2] = `radioButton -l $label_selects`;
+	setParent..;
+	radioButton -e -sl $AriSortOutliner_UI_modeRB[$sortMode];
+	$AriSortOutliner_UI_reverseCB = `checkBox -l $label_reverse -v $reverseTrue`;
+	separator -h 8 -st "in";
+	setParent..;
+	string $buttonSave = `button       -l "Save"  -c "AriSortOutlinerOptions_Save()"`;
+	string $button     = `button -h 38 -l "Apply" -c "AriSortOutliner_GO()"`;
+	setParent..;
+	formLayout -e 
+	-af $button	"bottom" 0  
+	-af $button	"left" 0
+	-af $button	"right" 0
+	-ac $buttonSave	"bottom" 0 $button 
+	-af $buttonSave	"left" 0
+	-af $buttonSave	"right" 0
+	-af $column	"top" 0 
+	-af $column	"left" 0
+	-af $column	"right" 0
+	$form;
+	showWindow;
+}

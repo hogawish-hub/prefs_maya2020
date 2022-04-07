@@ -1,0 +1,196 @@
+//Maya Preference 2020 (Release 1)
+//
+//
+
+nameCommand
+	-annotation "CAM_Working_ResetNameCommand"
+	-sourceType "mel"
+	-command ("CAM_Working_Reset")
+	CAM_Working_ResetNameCommand;
+
+nameCommand
+	-annotation "XrayNameCommand"
+	-sourceType "mel"
+	-command ("Xray")
+	XrayNameCommand;
+
+nameCommand
+	-annotation "DeXrayNameCommand"
+	-sourceType "mel"
+	-command ("DeXray")
+	DeXrayNameCommand;
+
+nameCommand
+	-annotation "NurbsOFFNameCommand"
+	-sourceType "mel"
+	-command ("NurbsOFF")
+	NurbsOFFNameCommand;
+
+nameCommand
+	-annotation "NurbsONNameCommand"
+	-sourceType "mel"
+	-command ("NurbsON")
+	NurbsONNameCommand;
+
+nameCommand
+	-annotation "ImagePlaneOFFNameCommand"
+	-sourceType "mel"
+	-command ("ImagePlaneOFF")
+	ImagePlaneOFFNameCommand;
+
+nameCommand
+	-annotation "imagePlaneONNameCommand"
+	-sourceType "mel"
+	-command ("imagePlaneON")
+	imagePlaneONNameCommand;
+
+nameCommand
+	-annotation "Xray_ON_OFFNameCommand"
+	-sourceType "mel"
+	-command ("Xray_ON_OFF")
+	Xray_ON_OFFNameCommand;
+
+nameCommand
+	-annotation "Nurbs_ON_OFFNameCommand"
+	-sourceType "mel"
+	-command ("Nurbs_ON_OFF")
+	Nurbs_ON_OFFNameCommand;
+
+nameCommand
+	-annotation "ImagePlane_ON_OFFNameCommand"
+	-sourceType "mel"
+	-command ("ImagePlane_ON_OFF")
+	ImagePlane_ON_OFFNameCommand;
+
+nameCommand
+	-annotation "GraphEditorNameCommand"
+	-sourceType "mel"
+	-command ("GraphEditor")
+	GraphEditorNameCommand;
+
+nameCommand
+	-annotation "ScriptEditorNameCommand"
+	-sourceType "mel"
+	-command ("ScriptEditor")
+	ScriptEditorNameCommand;
+
+nameCommand
+	-annotation "NodeEditorWindowNameCommand"
+	-sourceType "mel"
+	-command ("NodeEditorWindow")
+	NodeEditorWindowNameCommand;
+
+nameCommand
+	-annotation "TranslateToolMarkingMenuNameCommand"
+	-sourceType "mel"
+	-command ("TranslateToolMarkingMenu")
+	TranslateToolMarkingMenuNameCommand;
+
+nameCommand
+	-annotation "TranslateToolMarkingMenuPopDownNameCommand"
+	-sourceType "mel"
+	-command ("TranslateToolMarkingMenuPopDown")
+	TranslateToolMarkingMenuPopDownNameCommand;
+
+nameCommand
+	-annotation "RotateToolMarkingMenuPopDownNameCommand"
+	-sourceType "mel"
+	-command ("RotateToolMarkingMenuPopDown")
+	RotateToolMarkingMenuPopDownNameCommand;
+
+nameCommand
+	-annotation "RotateToolMarkingMenuNameCommand"
+	-sourceType "mel"
+	-command ("RotateToolMarkingMenu")
+	RotateToolMarkingMenuNameCommand;
+
+nameCommand
+	-annotation "FrameAllNameCommand"
+	-sourceType "mel"
+	-command ("FrameAll")
+	FrameAllNameCommand;
+
+nameCommand
+	-annotation "HypershadeFrameAllNameCommand"
+	-sourceType "mel"
+	-command ("HypershadeFrameAll")
+	HypershadeFrameAllNameCommand;
+
+nameCommand
+	-annotation "CloseFrontWindowNameCommand"
+	-sourceType "mel"
+	-command ("CloseFrontWindow")
+	CloseFrontWindowNameCommand;
+
+nameCommand
+	-annotation "TimeSliderKeyDeleteNameCommand"
+	-sourceType "mel"
+	-command ("TimeSliderKeyDelete")
+	TimeSliderKeyDeleteNameCommand;
+
+nameCommand
+	-annotation "TimeSliderCopyKeyNameCommand"
+	-sourceType "mel"
+	-command ("TimeSliderCopyKey")
+	TimeSliderCopyKeyNameCommand;
+
+nameCommand
+	-annotation "TimeSliderPasteKeyNameCommand"
+	-sourceType "mel"
+	-command ("TimeSliderPasteKey")
+	TimeSliderPasteKeyNameCommand;
+
+nameCommand
+	-annotation "SelectHierarchyNameCommand"
+	-sourceType "mel"
+	-command ("SelectHierarchy")
+	SelectHierarchyNameCommand;
+
+nameCommand
+	-annotation "PlayblustOptionNameCommand"
+	-sourceType "mel"
+	-command ("PlayblustOption")
+	PlayblustOptionNameCommand;
+
+nameCommand
+	-annotation "PlayblustNameCommand"
+	-sourceType "mel"
+	-command ("Playblust")
+	PlayblustNameCommand;
+
+nameCommand
+	-annotation "MotionTrail_ON_OFFNameCommand"
+	-sourceType "mel"
+	-command ("MotionTrail_ON_OFF")
+	MotionTrail_ON_OFFNameCommand;
+
+nameCommand
+	-annotation "GraphFilterNameCommand"
+	-sourceType "mel"
+	-command ("GraphFilter")
+	GraphFilterNameCommand;
+
+nameCommand
+	-annotation "testNameCommand"
+	-sourceType "mel"
+	-command ("test")
+	testNameCommand;
+
+nameCommand
+	-annotation "ArtPaintSkinWeightsToolNameCommand"
+	-sourceType "mel"
+	-command ("ArtPaintSkinWeightsTool")
+	ArtPaintSkinWeightsToolNameCommand;
+
+nameCommand
+	-annotation "ShapeEditorNameCommand"
+	-sourceType "mel"
+	-command ("ShapeEditor")
+	ShapeEditorNameCommand;
+
+nameCommand
+	-annotation "LassoToolNameCommand"
+	-sourceType "mel"
+	-command ("LassoTool")
+	LassoToolNameCommand;
+

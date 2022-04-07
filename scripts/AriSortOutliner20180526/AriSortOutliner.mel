@@ -1,0 +1,161 @@
+//--------------------------------------------------------------------------
+//
+// ScriptName : AriSortOutliner
+// Contents   : アウトライナ、ハイパーグラフ階層のオブジェクトをソートします。
+// Author     : Ari
+// Since      : 2014/10
+// Update     : 2018/05/26 バグ修正 選択順ソート追加
+//              2018/05/20 降順 タイプ別ソート追加
+// Note       : 選択して実行 選択したものの中でだけソート
+//
+//--------------------------------------------------------------------------
+
+
+proc int AriSortOutliner_ListNum (string $obj){
+	
+	int $num;
+	
+	string $parent[]=`listRelatives -p  -f $obj`;
+	string $children[];
+	if($parent[0]=="")	$children=`ls -as -l`;
+	else $children=	`listRelatives -c  -f $parent[0]`;
+	int $i=0;
+	for($child in $children){
+		if($child == $obj){
+			$num=$i;
+			break;
+		}
+		$i++;
+	}
+	return $num;
+}
+proc string AriSortOutliner_NumObj (string $parent,int $num){
+	if($parent=="")	$children=`ls -as -l`;
+	else $children=	`listRelatives -c  -f $parent`;
+	return $children[$num];
+}
+proc AriSortOutliner_NumSort (string $obj,int $num){
+	string $parent[] = `listRelatives -p  -f $obj`;	
+	string $thisObj  = AriSortOutliner_NumObj ($parent[0],$num);
+	int $myNum=AriSortOutliner_ListNum($obj);
+	int $move = $num-$myNum;
+	if($move!=0){
+		reorder -relative $move $obj;
+		reorder -relative ($move*(-1)-1) $thisObj;
+	}
+}
+proc string[] stringArrayReverse(string $beforeArray[]){
+	string $afterArray[];
+	for($i=0; $i<size($beforeArray); $i++){
+		$afterArray[$i] = $beforeArray[size($beforeArray)-1-$i];
+	}
+	return $afterArray;
+}
+global proc AriSortOutliner(){
+	int $jpTrue = false;
+	if(`about -uil`=="ja_JP")$jpTrue = true;
+	else $jpTrue = false;
+	string $lable_ascending = "Ascending Order";
+	string $label_reverse = "Reverse Order";
+	string $label_name = "Name";
+	string $label_type = "Type";
+	string $label_selects = "Selects";
+	if($jpTrue){
+		$lable_ascending = "昇順";
+		$label_reverse = "降順";
+		$label_name = "名前";
+		$label_type = "種類";
+		$label_selects = "選択";
+	}
+	int $reverseTrue = false;
+	int $sortMode    = 0;
+	if(`optionVar -exists "AriSortOutliner_reverse"`)	$reverseTrue = `optionVar -q "AriSortOutliner_reverse"`;
+	if(`optionVar -exists "AriSortOutliner_type"`)		$sortMode    = `optionVar -q "AriSortOutliner_type"`;
+	string $selectObjs[]=`ls -sl -l`;
+	if(size($selectObjs)==0){
+		AriSortOutlinerOptions;
+	}
+	string $dagObjects[];
+	int $i=0;
+	for($obj in $selectObjs){
+		if(startsWith($obj,"|")){
+			$dagObjects[$i] = $obj;
+			$i++;
+		}
+	}
+	string $before_parent[];
+	$i=0;
+	for($obj in $dagObjects){
+		string $pWorks[]=`listRelatives -p -f $obj`;
+		$before_parent[$i] = $pWorks[0];
+		$i++;
+	}
+	string $parentList[] = stringArrayRemoveDuplicates($before_parent);
+	for($parent in $parentList){
+		int $before_Number[];
+		string $before_obj[];
+		clear $before_Number;
+		clear $before_obj;
+		int $j=0;
+		for($i=0;$i<size($before_parent);$i++){
+			if($before_parent[$i] == $parent){	
+				$before_Number[$j] = AriSortOutliner_ListNum($dagObjects[$i]);
+				$before_obj[$j] = $dagObjects[$i];
+				$j++;
+			}
+		}
+		int $after_Number[];
+		string $before_obj_lower[];
+		string $after_obj[];
+		string $after_obj_lower[];
+		clear $after_Number;
+		clear $before_obj_lower;
+		clear $after_obj;
+		clear $after_obj_lower;
+		$after_Number = sort($before_Number);
+		if($sortMode==0 || $sortMode==1){
+			for($i=0;$i<size($before_obj);$i++){
+				string $lowerString = tolower($before_obj[$i]);
+				$before_obj_lower[$i] = $lowerString;
+				if($sortMode==1){
+					string $child[] = `listRelatives -s -pa $before_obj[$i]`;
+					string $nodeType;
+					if(size($child)!=0)	$nodeType = `nodeType $child[0]`;
+					else				$nodeType = `nodeType $before_obj[$i]`;
+					$before_obj_lower[$i] = ($nodeType +","+ $lowerString);
+				}
+			}
+			$after_obj_lower = sort($before_obj_lower);
+			if($sortMode==1){
+				for($i=0;$i<size($after_obj_lower);$i++){
+					string $sepa[];
+					tokenize $after_obj_lower[$i] "," $sepa;
+					$after_obj_lower[$i] = $sepa[1];
+				}
+			}
+			for($i=0;$i<size($after_obj_lower);$i++){
+				for($j=0;$j<size($before_obj);$j++){
+					if($after_obj_lower[$i] == tolower($before_obj[$j])){
+						if(!stringArrayContains($before_obj[$j], $after_obj)){
+							$after_obj[$i]=$before_obj[$j];
+						}
+					}
+				}
+			}
+		}
+		if($sortMode==2) $after_obj = $before_obj;
+		if($reverseTrue) $after_obj = stringArrayReverse($after_obj);
+		for($i=0;$i<size($after_Number);$i++){
+			AriSortOutliner_NumSort($after_obj[$i],$after_Number[$i]);
+		}
+	}
+	select $dagObjects;
+	string $resultReverseText;
+	string $resultModeText;
+	if($reverseTrue == true) $resultReverseText = $label_reverse;
+	if($reverseTrue == false)$resultReverseText = $lable_ascending;
+	if($sortMode == 0)	$resultModeText = $label_name;
+	if($sortMode == 1)	$resultModeText = $label_type;
+	if($sortMode == 2)	$resultModeText = $label_selects;
+	print($resultReverseText+"   "+$resultModeText+"\n");
+}

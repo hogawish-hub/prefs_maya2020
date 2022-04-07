@@ -1,0 +1,2 @@
+import maya.cmds as cmds
+print(len(cmds.ls(sl=True)))
