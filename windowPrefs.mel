@@ -16,9 +16,9 @@ windowPref -topLeftCorner 250 200 -widthHeight 700 400 -maximized false -parentM
 windowPref -topLeftCorner 250 200 -widthHeight 550 562 -maximized false -parentMain true blindDataEditor1Window;
 windowPref -topLeftCorner 150 200 -widthHeight 1120 640 -maximized false -parentMain true polyTexturePlacementPanel1Window;
 windowPref -topLeftCorner 235 230 -widthHeight 1430 710 -maximized false -parentMain true contentBrowserPanel1Window;
-windowPref -topLeftCorner 1101 1779 -widthHeight 140 28 -maximized false -parentMain true gozwin;
+windowPref -topLeftCorner 16383 16383 -widthHeight 140 28 -maximized false -parentMain true gozwin;
 windowPref -topLeftCorner -8 -1 -widthHeight 679 822 -maximized true -parentMain false MayaWindow;
-windowPref -topLeftCorner 524 1912 -widthHeight 546 350 -maximized false -parentMain true OptionBoxWindow;
+windowPref -topLeftCorner 585 2036 -widthHeight 546 278 -maximized false -parentMain true OptionBoxWindow;
 windowPref -topLeftCorner 320 896 -widthHeight 653 476 -maximized false -parentMain true PreferencesWindow;
 windowPref -topLeftCorner 342 2035 -widthHeight 620 760 -maximized false -parentMain true expressionEditorWin;
 windowPref -topLeftCorner 289 267 -widthHeight 1332 639 -maximized false -parentMain true HotkeyEditor;
@@ -26,7 +26,7 @@ windowPref -topLeftCorner 200 803 -widthHeight 882 690 -maximized false -parentM
 windowPref -topLeftCorner 585 894 -widthHeight 357 275 -maximized false -parentMain true namespaceEditor;
 windowPref -topLeftCorner 388 218 -widthHeight 1401 624 -maximized false -parentMain true mgear_shifter_build_log_window;
 windowPref -topLeftCorner 386 640 -widthHeight 500 525 -maximized false -parentMain true AddAttrWin;
-windowPref -topLeftCorner 844 2165 -widthHeight 614 615 -maximized false -parentMain true Viewport20OptionsWindow;
+windowPref -topLeftCorner 260 1205 -widthHeight 614 615 -maximized false -parentMain true Viewport20OptionsWindow;
 windowPref -topLeftCorner 315 282 -widthHeight 380 730 -maximized false -parentMain true createRenderNodeWindow;
 windowPref -topLeftCorner 386 640 -widthHeight 692 411 -maximized false -parentMain true pluginManagerWindow;
 windowPref -topLeftCorner 420 55 -widthHeight 1581 411 -maximized false -parentMain true FilePathEditor;

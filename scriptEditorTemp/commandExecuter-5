@@ -1,2 +1,8 @@
-import maya.cmds as cmds
-print(len(cmds.ls(sl=True)))
+import sys
+python_path = sys.path
+if not r'N:\GMR\source\dev\tech\tex_atlas' in python_path:
+    python_path.append(r'N:\GMR\source\dev\tech\tex_atlas')
+
+
+import generate_texture_atlas_ui as gta
+gta.TextureAtlasUI()

@@ -1,7 +1,7 @@
 {
     "linkedMenu": "modelingMenuSet",
     "autoSave": true,
-    "selectedShelf": "Polygons",
+    "selectedShelf": "Custom",
     "panels": [
         {
             "mainWindowPanel": true,
@@ -118,7 +118,7 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 1123,
+                                        "controlWidth": 1323,
                                         "controlHeight": 850,
                                         "collapsed": false,
                                         "controls": [
@@ -134,7 +134,7 @@
                                                 "closed": false,
                                                 "widthProperty": "free",
                                                 "heightProperty": "free",
-                                                "controlWidth": 1123,
+                                                "controlWidth": 1323,
                                                 "controlHeight": 850,
                                                 "initCallback": "mainPaneStateCallback",
                                                 "stateString": "global string $gMainPane; paneLayout -edit -configuration single $gMainPane;if(`modelPanel -exists modelPanel4`){ modelPanel -edit -parent $gMainPane modelPanel4; paneLayout -edit -setPane modelPanel4 1 $gMainPane;}"
@@ -144,8 +144,8 @@
                                 },
                                 {
                                     "tabWidget": {
-                                        "selectedIndex": 2,
-                                        "controlWidth": 460,
+                                        "selectedIndex": 0,
+                                        "controlWidth": 260,
                                         "controlHeight": 850,
                                         "collapsed": false,
                                         "controls": [
@@ -162,7 +162,7 @@
                                                 "widthProperty": "preferred",
                                                 "heightProperty": "free",
                                                 "controlWidth": 260,
-                                                "controlHeight": 851
+                                                "controlHeight": 850
                                             },
                                             {
                                                 "objectName": "NEXDockControl",
@@ -305,43 +305,60 @@
                     }
                 ]
             }
+        },
+        {
+            "mainWindowPanel": false,
+            "posX": 1488,
+            "posY": 353,
+            "splitter": {
+                "orientation": "horizontal",
+                "children": [
+                    {
+                        "tabWidget": {
+                            "selectedIndex": 0,
+                            "controlWidth": 947,
+                            "controlHeight": 705,
+                            "collapsed": false,
+                            "controls": [
+                                {
+                                    "objectName": "scriptEditorPanel1Window",
+                                    "title": "Script Editor",
+                                    "uiScript": "if(!`panel -q -exists scriptEditorPanel1`) {\n\tint $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tstring $panelName = \"scriptEditorPanel1\";\n\tscriptedPanel -unParent  -type \"scriptEditorPanel\" -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  scriptEditorPanel1;\n} else {\n\tscriptedPanel -e -unParent scriptEditorPanel1;\n}\nscriptedPanel -e -parent scriptEditorPanel1Window scriptEditorPanel1;\n",
+                                    "retain": false,
+                                    "deleteLater": true,
+                                    "loadImmediately": false,
+                                    "checkPlugins": false,
+                                    "tabDirection": 0,
+                                    "closed": false,
+                                    "widthProperty": "free",
+                                    "heightProperty": "free",
+                                    "controlWidth": 947,
+                                    "controlHeight": 705
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
         }
     ],
     "closedControls": [
         {
-            "objectName": "control_01WorkspaceControl",
-            "posX": 1201,
-            "posY": 290,
-            "controlHeight": 540,
-            "controlWidth": 307,
+            "objectName": "unifiedRenderGlobalsWindow",
+            "posX": 1128,
+            "posY": 296,
+            "controlHeight": 638,
+            "controlWidth": 456,
             "widthProperty": "free",
             "heightProperty": "free"
         },
         {
-            "objectName": "scriptEditorPanel1Window",
-            "posX": 577,
-            "posY": 385,
-            "controlHeight": 656,
-            "controlWidth": 1059,
+            "objectName": "hyperShadePanel1Window",
+            "posX": 1807,
+            "posY": 294,
+            "controlHeight": 899,
+            "controlWidth": 980,
             "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "ToolSettings",
-            "posX": 1197,
-            "posY": 244,
-            "controlHeight": 800,
-            "controlWidth": 460,
-            "widthProperty": "preferred",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "UVToolkitDockControl",
-            "posX": 1004,
-            "posY": 251,
-            "controlHeight": 778,
-            "controlWidth": 285,
-            "widthProperty": "preferred",
             "heightProperty": "free"
         },
         {
@@ -354,11 +371,20 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "referenceEditorPanel1Window",
-            "posX": 446,
-            "posY": 299,
-            "controlHeight": 454,
-            "controlWidth": 682,
+            "objectName": "control_01WorkspaceControl",
+            "posX": 1201,
+            "posY": 290,
+            "controlHeight": 540,
+            "controlWidth": 307,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "polyTexturePlacementPanel1Window",
+            "posX": 511,
+            "posY": 171,
+            "controlHeight": 904,
+            "controlWidth": 1043,
             "widthProperty": "free",
             "heightProperty": "free"
         },
@@ -372,48 +398,57 @@
             "heightProperty": "free"
         },
         {
-            "objectName": "nodeEditorPanel1Window",
-            "posX": 429,
-            "posY": 239,
-            "controlHeight": 600,
-            "controlWidth": 1040,
+            "objectName": "ArnoldViewportRendererOptions",
+            "posX": 250,
+            "posY": 200,
+            "controlHeight": 68,
+            "controlWidth": 250,
             "widthProperty": "free",
             "heightProperty": "free"
         },
         {
+            "objectName": "referenceEditorPanel1Window",
+            "posX": 2056,
+            "posY": 392,
+            "controlHeight": 488,
+            "controlWidth": 682,
+            "widthProperty": "free",
+            "heightProperty": "free"
+        },
+        {
+            "objectName": "UVToolkitDockControl",
+            "posX": 1004,
+            "posY": 251,
+            "controlHeight": 778,
+            "controlWidth": 285,
+            "widthProperty": "preferred",
+            "heightProperty": "free"
+        },
+        {
             "objectName": "renderViewWindow",
-            "posX": 655,
-            "posY": 159,
+            "posX": 130,
+            "posY": 143,
             "controlHeight": 867,
             "controlWidth": 1716,
             "widthProperty": "free",
             "heightProperty": "free"
         },
         {
-            "objectName": "polyTexturePlacementPanel1Window",
-            "posX": 630,
-            "posY": 176,
-            "controlHeight": 904,
-            "controlWidth": 1043,
+            "objectName": "nodeEditorPanel1Window",
+            "posX": 1778,
+            "posY": 418,
+            "controlHeight": 600,
+            "controlWidth": 1040,
             "widthProperty": "free",
             "heightProperty": "free"
         },
         {
-            "objectName": "unifiedRenderGlobalsWindow",
-            "posX": 1128,
-            "posY": 296,
-            "controlHeight": 638,
-            "controlWidth": 456,
-            "widthProperty": "free",
-            "heightProperty": "free"
-        },
-        {
-            "objectName": "hyperShadePanel1Window",
-            "posX": 845,
-            "posY": 189,
-            "controlHeight": 978,
-            "controlWidth": 1609,
-            "widthProperty": "free",
+            "objectName": "ToolSettings",
+            "posX": 1197,
+            "posY": 244,
+            "controlHeight": 800,
+            "controlWidth": 460,
+            "widthProperty": "preferred",
             "heightProperty": "free"
         }
     ]
